@@ -1,12 +1,98 @@
 C:\Users\elian\Documents\Administratif\Études\ESPL\U5 Dev - Coef 4\Invoice Master\Invoice Master\bin\Debug\Invoice Master.exe.config
 C:\Users\elian\Documents\Administratif\Études\ESPL\U5 Dev - Coef 4\Invoice Master\Invoice Master\bin\Debug\Invoice Master.exe
 C:\Users\elian\Documents\Administratif\Études\ESPL\U5 Dev - Coef 4\Invoice Master\Invoice Master\bin\Debug\Invoice Master.pdb
+C:\Users\elian\Documents\Administratif\Études\ESPL\U5 Dev - Coef 4\Invoice Master\Invoice Master\bin\Debug\Azure.Core.dll
+C:\Users\elian\Documents\Administratif\Études\ESPL\U5 Dev - Coef 4\Invoice Master\Invoice Master\bin\Debug\Azure.Identity.dll
+C:\Users\elian\Documents\Administratif\Études\ESPL\U5 Dev - Coef 4\Invoice Master\Invoice Master\bin\Debug\Microsoft.Bcl.AsyncInterfaces.dll
+C:\Users\elian\Documents\Administratif\Études\ESPL\U5 Dev - Coef 4\Invoice Master\Invoice Master\bin\Debug\Microsoft.Bcl.Cryptography.dll
+C:\Users\elian\Documents\Administratif\Études\ESPL\U5 Dev - Coef 4\Invoice Master\Invoice Master\bin\Debug\Microsoft.Data.SqlClient.dll
+C:\Users\elian\Documents\Administratif\Études\ESPL\U5 Dev - Coef 4\Invoice Master\Invoice Master\bin\Debug\Microsoft.Extensions.Caching.Abstractions.dll
+C:\Users\elian\Documents\Administratif\Études\ESPL\U5 Dev - Coef 4\Invoice Master\Invoice Master\bin\Debug\Microsoft.Extensions.Caching.Memory.dll
+C:\Users\elian\Documents\Administratif\Études\ESPL\U5 Dev - Coef 4\Invoice Master\Invoice Master\bin\Debug\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+C:\Users\elian\Documents\Administratif\Études\ESPL\U5 Dev - Coef 4\Invoice Master\Invoice Master\bin\Debug\Microsoft.Extensions.Logging.Abstractions.dll
+C:\Users\elian\Documents\Administratif\Études\ESPL\U5 Dev - Coef 4\Invoice Master\Invoice Master\bin\Debug\Microsoft.Extensions.Options.dll
+C:\Users\elian\Documents\Administratif\Études\ESPL\U5 Dev - Coef 4\Invoice Master\Invoice Master\bin\Debug\Microsoft.Extensions.Primitives.dll
+C:\Users\elian\Documents\Administratif\Études\ESPL\U5 Dev - Coef 4\Invoice Master\Invoice Master\bin\Debug\Microsoft.Identity.Client.dll
+C:\Users\elian\Documents\Administratif\Études\ESPL\U5 Dev - Coef 4\Invoice Master\Invoice Master\bin\Debug\Microsoft.Identity.Client.Extensions.Msal.dll
+C:\Users\elian\Documents\Administratif\Études\ESPL\U5 Dev - Coef 4\Invoice Master\Invoice Master\bin\Debug\Microsoft.IdentityModel.Abstractions.dll
+C:\Users\elian\Documents\Administratif\Études\ESPL\U5 Dev - Coef 4\Invoice Master\Invoice Master\bin\Debug\Microsoft.IdentityModel.JsonWebTokens.dll
+C:\Users\elian\Documents\Administratif\Études\ESPL\U5 Dev - Coef 4\Invoice Master\Invoice Master\bin\Debug\Microsoft.IdentityModel.Logging.dll
+C:\Users\elian\Documents\Administratif\Études\ESPL\U5 Dev - Coef 4\Invoice Master\Invoice Master\bin\Debug\Microsoft.IdentityModel.Protocols.dll
+C:\Users\elian\Documents\Administratif\Études\ESPL\U5 Dev - Coef 4\Invoice Master\Invoice Master\bin\Debug\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+C:\Users\elian\Documents\Administratif\Études\ESPL\U5 Dev - Coef 4\Invoice Master\Invoice Master\bin\Debug\Microsoft.IdentityModel.Tokens.dll
+C:\Users\elian\Documents\Administratif\Études\ESPL\U5 Dev - Coef 4\Invoice Master\Invoice Master\bin\Debug\System.Buffers.dll
+C:\Users\elian\Documents\Administratif\Études\ESPL\U5 Dev - Coef 4\Invoice Master\Invoice Master\bin\Debug\System.ClientModel.dll
+C:\Users\elian\Documents\Administratif\Études\ESPL\U5 Dev - Coef 4\Invoice Master\Invoice Master\bin\Debug\System.Diagnostics.DiagnosticSource.dll
+C:\Users\elian\Documents\Administratif\Études\ESPL\U5 Dev - Coef 4\Invoice Master\Invoice Master\bin\Debug\System.IdentityModel.Tokens.Jwt.dll
+C:\Users\elian\Documents\Administratif\Études\ESPL\U5 Dev - Coef 4\Invoice Master\Invoice Master\bin\Debug\System.IO.FileSystem.AccessControl.dll
+C:\Users\elian\Documents\Administratif\Études\ESPL\U5 Dev - Coef 4\Invoice Master\Invoice Master\bin\Debug\System.Memory.Data.dll
+C:\Users\elian\Documents\Administratif\Études\ESPL\U5 Dev - Coef 4\Invoice Master\Invoice Master\bin\Debug\System.Memory.dll
+C:\Users\elian\Documents\Administratif\Études\ESPL\U5 Dev - Coef 4\Invoice Master\Invoice Master\bin\Debug\System.Numerics.Vectors.dll
+C:\Users\elian\Documents\Administratif\Études\ESPL\U5 Dev - Coef 4\Invoice Master\Invoice Master\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+C:\Users\elian\Documents\Administratif\Études\ESPL\U5 Dev - Coef 4\Invoice Master\Invoice Master\bin\Debug\System.Security.AccessControl.dll
+C:\Users\elian\Documents\Administratif\Études\ESPL\U5 Dev - Coef 4\Invoice Master\Invoice Master\bin\Debug\System.Security.Cryptography.Pkcs.dll
+C:\Users\elian\Documents\Administratif\Études\ESPL\U5 Dev - Coef 4\Invoice Master\Invoice Master\bin\Debug\System.Security.Cryptography.ProtectedData.dll
+C:\Users\elian\Documents\Administratif\Études\ESPL\U5 Dev - Coef 4\Invoice Master\Invoice Master\bin\Debug\System.Security.Principal.Windows.dll
+C:\Users\elian\Documents\Administratif\Études\ESPL\U5 Dev - Coef 4\Invoice Master\Invoice Master\bin\Debug\System.Text.Encodings.Web.dll
+C:\Users\elian\Documents\Administratif\Études\ESPL\U5 Dev - Coef 4\Invoice Master\Invoice Master\bin\Debug\System.Text.Json.dll
+C:\Users\elian\Documents\Administratif\Études\ESPL\U5 Dev - Coef 4\Invoice Master\Invoice Master\bin\Debug\System.Threading.Tasks.Extensions.dll
+C:\Users\elian\Documents\Administratif\Études\ESPL\U5 Dev - Coef 4\Invoice Master\Invoice Master\bin\Debug\System.ValueTuple.dll
+C:\Users\elian\Documents\Administratif\Études\ESPL\U5 Dev - Coef 4\Invoice Master\Invoice Master\bin\Debug\Azure.Core.xml
+C:\Users\elian\Documents\Administratif\Études\ESPL\U5 Dev - Coef 4\Invoice Master\Invoice Master\bin\Debug\Azure.Identity.xml
+C:\Users\elian\Documents\Administratif\Études\ESPL\U5 Dev - Coef 4\Invoice Master\Invoice Master\bin\Debug\Microsoft.Bcl.AsyncInterfaces.xml
+C:\Users\elian\Documents\Administratif\Études\ESPL\U5 Dev - Coef 4\Invoice Master\Invoice Master\bin\Debug\Microsoft.Bcl.Cryptography.xml
+C:\Users\elian\Documents\Administratif\Études\ESPL\U5 Dev - Coef 4\Invoice Master\Invoice Master\bin\Debug\Microsoft.Data.SqlClient.xml
+C:\Users\elian\Documents\Administratif\Études\ESPL\U5 Dev - Coef 4\Invoice Master\Invoice Master\bin\Debug\Microsoft.Extensions.Caching.Abstractions.xml
+C:\Users\elian\Documents\Administratif\Études\ESPL\U5 Dev - Coef 4\Invoice Master\Invoice Master\bin\Debug\Microsoft.Extensions.Caching.Memory.xml
+C:\Users\elian\Documents\Administratif\Études\ESPL\U5 Dev - Coef 4\Invoice Master\Invoice Master\bin\Debug\Microsoft.Extensions.DependencyInjection.Abstractions.xml
+C:\Users\elian\Documents\Administratif\Études\ESPL\U5 Dev - Coef 4\Invoice Master\Invoice Master\bin\Debug\Microsoft.Extensions.Logging.Abstractions.xml
+C:\Users\elian\Documents\Administratif\Études\ESPL\U5 Dev - Coef 4\Invoice Master\Invoice Master\bin\Debug\Microsoft.Extensions.Options.xml
+C:\Users\elian\Documents\Administratif\Études\ESPL\U5 Dev - Coef 4\Invoice Master\Invoice Master\bin\Debug\Microsoft.Extensions.Primitives.xml
+C:\Users\elian\Documents\Administratif\Études\ESPL\U5 Dev - Coef 4\Invoice Master\Invoice Master\bin\Debug\Microsoft.Identity.Client.xml
+C:\Users\elian\Documents\Administratif\Études\ESPL\U5 Dev - Coef 4\Invoice Master\Invoice Master\bin\Debug\Microsoft.Identity.Client.Extensions.Msal.xml
+C:\Users\elian\Documents\Administratif\Études\ESPL\U5 Dev - Coef 4\Invoice Master\Invoice Master\bin\Debug\Microsoft.IdentityModel.Abstractions.xml
+C:\Users\elian\Documents\Administratif\Études\ESPL\U5 Dev - Coef 4\Invoice Master\Invoice Master\bin\Debug\Microsoft.IdentityModel.JsonWebTokens.xml
+C:\Users\elian\Documents\Administratif\Études\ESPL\U5 Dev - Coef 4\Invoice Master\Invoice Master\bin\Debug\Microsoft.IdentityModel.Logging.xml
+C:\Users\elian\Documents\Administratif\Études\ESPL\U5 Dev - Coef 4\Invoice Master\Invoice Master\bin\Debug\Microsoft.IdentityModel.Protocols.xml
+C:\Users\elian\Documents\Administratif\Études\ESPL\U5 Dev - Coef 4\Invoice Master\Invoice Master\bin\Debug\Microsoft.IdentityModel.Protocols.OpenIdConnect.xml
+C:\Users\elian\Documents\Administratif\Études\ESPL\U5 Dev - Coef 4\Invoice Master\Invoice Master\bin\Debug\Microsoft.IdentityModel.Tokens.xml
+C:\Users\elian\Documents\Administratif\Études\ESPL\U5 Dev - Coef 4\Invoice Master\Invoice Master\bin\Debug\System.Buffers.xml
+C:\Users\elian\Documents\Administratif\Études\ESPL\U5 Dev - Coef 4\Invoice Master\Invoice Master\bin\Debug\System.ClientModel.xml
+C:\Users\elian\Documents\Administratif\Études\ESPL\U5 Dev - Coef 4\Invoice Master\Invoice Master\bin\Debug\System.Diagnostics.DiagnosticSource.xml
+C:\Users\elian\Documents\Administratif\Études\ESPL\U5 Dev - Coef 4\Invoice Master\Invoice Master\bin\Debug\System.IdentityModel.Tokens.Jwt.xml
+C:\Users\elian\Documents\Administratif\Études\ESPL\U5 Dev - Coef 4\Invoice Master\Invoice Master\bin\Debug\System.IO.FileSystem.AccessControl.xml
+C:\Users\elian\Documents\Administratif\Études\ESPL\U5 Dev - Coef 4\Invoice Master\Invoice Master\bin\Debug\System.Memory.xml
+C:\Users\elian\Documents\Administratif\Études\ESPL\U5 Dev - Coef 4\Invoice Master\Invoice Master\bin\Debug\System.Memory.Data.xml
+C:\Users\elian\Documents\Administratif\Études\ESPL\U5 Dev - Coef 4\Invoice Master\Invoice Master\bin\Debug\System.Numerics.Vectors.xml
+C:\Users\elian\Documents\Administratif\Études\ESPL\U5 Dev - Coef 4\Invoice Master\Invoice Master\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+C:\Users\elian\Documents\Administratif\Études\ESPL\U5 Dev - Coef 4\Invoice Master\Invoice Master\bin\Debug\System.Security.AccessControl.xml
+C:\Users\elian\Documents\Administratif\Études\ESPL\U5 Dev - Coef 4\Invoice Master\Invoice Master\bin\Debug\System.Security.Cryptography.Pkcs.xml
+C:\Users\elian\Documents\Administratif\Études\ESPL\U5 Dev - Coef 4\Invoice Master\Invoice Master\bin\Debug\System.Security.Cryptography.ProtectedData.xml
+C:\Users\elian\Documents\Administratif\Études\ESPL\U5 Dev - Coef 4\Invoice Master\Invoice Master\bin\Debug\System.Security.Principal.Windows.xml
+C:\Users\elian\Documents\Administratif\Études\ESPL\U5 Dev - Coef 4\Invoice Master\Invoice Master\bin\Debug\System.Text.Encodings.Web.xml
+C:\Users\elian\Documents\Administratif\Études\ESPL\U5 Dev - Coef 4\Invoice Master\Invoice Master\bin\Debug\System.Text.Json.xml
+C:\Users\elian\Documents\Administratif\Études\ESPL\U5 Dev - Coef 4\Invoice Master\Invoice Master\bin\Debug\System.Threading.Tasks.Extensions.xml
+C:\Users\elian\Documents\Administratif\Études\ESPL\U5 Dev - Coef 4\Invoice Master\Invoice Master\bin\Debug\System.ValueTuple.xml
+C:\Users\elian\Documents\Administratif\Études\ESPL\U5 Dev - Coef 4\Invoice Master\Invoice Master\bin\Debug\cs\Microsoft.Data.SqlClient.resources.dll
+C:\Users\elian\Documents\Administratif\Études\ESPL\U5 Dev - Coef 4\Invoice Master\Invoice Master\bin\Debug\de\Microsoft.Data.SqlClient.resources.dll
+C:\Users\elian\Documents\Administratif\Études\ESPL\U5 Dev - Coef 4\Invoice Master\Invoice Master\bin\Debug\es\Microsoft.Data.SqlClient.resources.dll
+C:\Users\elian\Documents\Administratif\Études\ESPL\U5 Dev - Coef 4\Invoice Master\Invoice Master\bin\Debug\fr\Microsoft.Data.SqlClient.resources.dll
+C:\Users\elian\Documents\Administratif\Études\ESPL\U5 Dev - Coef 4\Invoice Master\Invoice Master\bin\Debug\it\Microsoft.Data.SqlClient.resources.dll
+C:\Users\elian\Documents\Administratif\Études\ESPL\U5 Dev - Coef 4\Invoice Master\Invoice Master\bin\Debug\ja\Microsoft.Data.SqlClient.resources.dll
+C:\Users\elian\Documents\Administratif\Études\ESPL\U5 Dev - Coef 4\Invoice Master\Invoice Master\bin\Debug\ko\Microsoft.Data.SqlClient.resources.dll
+C:\Users\elian\Documents\Administratif\Études\ESPL\U5 Dev - Coef 4\Invoice Master\Invoice Master\bin\Debug\pl\Microsoft.Data.SqlClient.resources.dll
+C:\Users\elian\Documents\Administratif\Études\ESPL\U5 Dev - Coef 4\Invoice Master\Invoice Master\bin\Debug\pt-BR\Microsoft.Data.SqlClient.resources.dll
+C:\Users\elian\Documents\Administratif\Études\ESPL\U5 Dev - Coef 4\Invoice Master\Invoice Master\bin\Debug\ru\Microsoft.Data.SqlClient.resources.dll
+C:\Users\elian\Documents\Administratif\Études\ESPL\U5 Dev - Coef 4\Invoice Master\Invoice Master\bin\Debug\tr\Microsoft.Data.SqlClient.resources.dll
+C:\Users\elian\Documents\Administratif\Études\ESPL\U5 Dev - Coef 4\Invoice Master\Invoice Master\bin\Debug\zh-Hans\Microsoft.Data.SqlClient.resources.dll
+C:\Users\elian\Documents\Administratif\Études\ESPL\U5 Dev - Coef 4\Invoice Master\Invoice Master\bin\Debug\zh-Hant\Microsoft.Data.SqlClient.resources.dll
 C:\Users\elian\Documents\Administratif\Études\ESPL\U5 Dev - Coef 4\Invoice Master\Invoice Master\obj\Debug\Invoice Master.csproj.AssemblyReference.cache
 C:\Users\elian\Documents\Administratif\Études\ESPL\U5 Dev - Coef 4\Invoice Master\Invoice Master\obj\Debug\Invoice_Master.frmAdminDashboard.resources
+C:\Users\elian\Documents\Administratif\Études\ESPL\U5 Dev - Coef 4\Invoice Master\Invoice Master\obj\Debug\Invoice_Master.frmUserDashboard.resources
 C:\Users\elian\Documents\Administratif\Études\ESPL\U5 Dev - Coef 4\Invoice Master\Invoice Master\obj\Debug\Invoice_Master.Properties.Resources.resources
+C:\Users\elian\Documents\Administratif\Études\ESPL\U5 Dev - Coef 4\Invoice Master\Invoice Master\obj\Debug\Invoice_Master.UI.frmUsers.resources
 C:\Users\elian\Documents\Administratif\Études\ESPL\U5 Dev - Coef 4\Invoice Master\Invoice Master\obj\Debug\Invoice Master.csproj.GenerateResource.cache
 C:\Users\elian\Documents\Administratif\Études\ESPL\U5 Dev - Coef 4\Invoice Master\Invoice Master\obj\Debug\Invoice Master.csproj.CoreCompileInputs.cache
+C:\Users\elian\Documents\Administratif\Études\ESPL\U5 Dev - Coef 4\Invoice Master\Invoice Master\obj\Debug\Invoice .E45E858A.Up2Date
 C:\Users\elian\Documents\Administratif\Études\ESPL\U5 Dev - Coef 4\Invoice Master\Invoice Master\obj\Debug\Invoice Master.exe
 C:\Users\elian\Documents\Administratif\Études\ESPL\U5 Dev - Coef 4\Invoice Master\Invoice Master\obj\Debug\Invoice Master.pdb
-C:\Users\elian\Documents\Administratif\Études\ESPL\U5 Dev - Coef 4\Invoice Master\Invoice Master\obj\Debug\Invoice_Master.frmUserDashboard.resources
-C:\Users\elian\Documents\Administratif\Études\ESPL\U5 Dev - Coef 4\Invoice Master\Invoice Master\obj\Debug\Invoice_Master.UI.frmUsers.resources

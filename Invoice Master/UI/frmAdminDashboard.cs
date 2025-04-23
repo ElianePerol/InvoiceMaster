@@ -18,45 +18,46 @@ namespace Invoice_Master
             InitializeComponent();
         }
 
-        private void frmAdminDashboard_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void panel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void lblUser_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void lblAppFName_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void lblSHead_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void lblAppLName_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void utilisateursToolStripMenuItem_Click(object sender, EventArgs e)
         {
             frmUsers users = new frmUsers();
             users.Show();
         }
+
+        private void frmAdminDashboard_Load(object sender, EventArgs e)
+        {
+            // code à exécuter au chargement du formulaire
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+            // si vous n’avez rien à dessiner, laissez vide
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+            // gestion du clic sur lblFooter
+        }
+
+        private void lblUser_Click(object sender, EventArgs e)
+        {
+            // gestion du clic éventuel sur lblUser
+        }
+
+        private void lblAppFName_Click(object sender, EventArgs e)
+        {
+            // gestion du clic sur INVOICE
+        }
+
+        private void lblAppLName_Click(object sender, EventArgs e)
+        {
+            // gestion du clic sur MASTER
+        }
+
+        private void lblSHead_Click(object sender, EventArgs e)
+        {
+            // gestion du clic sur le sous-titre
+        }
     }
 }
+
