@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Invoice_Master.UI;
 
 namespace Invoice_Master
 {
@@ -16,7 +17,7 @@ namespace Invoice_Master
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frmAdminDashboard());
+            Application.Run(new frmLogin());
         }
     }
 }

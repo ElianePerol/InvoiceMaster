@@ -88,6 +88,7 @@ C:\Users\elian\Documents\Administratif\Études\ESPL\U5 Dev - Coef 4\Invoice Mast
 C:\Users\elian\Documents\Administratif\Études\ESPL\U5 Dev - Coef 4\Invoice Master\Invoice Master\bin\Debug\zh-Hant\Microsoft.Data.SqlClient.resources.dll
 C:\Users\elian\Documents\Administratif\Études\ESPL\U5 Dev - Coef 4\Invoice Master\Invoice Master\obj\Debug\Invoice Master.csproj.AssemblyReference.cache
 C:\Users\elian\Documents\Administratif\Études\ESPL\U5 Dev - Coef 4\Invoice Master\Invoice Master\obj\Debug\Invoice_Master.frmAdminDashboard.resources
+C:\Users\elian\Documents\Administratif\Études\ESPL\U5 Dev - Coef 4\Invoice Master\Invoice Master\obj\Debug\Invoice_Master.UI.frmLogin.resources
 C:\Users\elian\Documents\Administratif\Études\ESPL\U5 Dev - Coef 4\Invoice Master\Invoice Master\obj\Debug\Invoice_Master.frmUserDashboard.resources
 C:\Users\elian\Documents\Administratif\Études\ESPL\U5 Dev - Coef 4\Invoice Master\Invoice Master\obj\Debug\Invoice_Master.Properties.Resources.resources
 C:\Users\elian\Documents\Administratif\Études\ESPL\U5 Dev - Coef 4\Invoice Master\Invoice Master\obj\Debug\Invoice_Master.UI.frmUsers.resources

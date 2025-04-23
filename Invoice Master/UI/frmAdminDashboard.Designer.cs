@@ -189,6 +189,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Tableau de bord administrateur";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.frmAdminDashboard_FormClosed);
             this.Load += new System.EventHandler(this.frmAdminDashboard_Load);
             this.pnlFooter.ResumeLayout(false);
             this.pnlFooter.PerformLayout();

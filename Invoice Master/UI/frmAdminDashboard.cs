@@ -58,6 +58,16 @@ namespace Invoice_Master
         {
             // gestion du clic sur le sous-titre
         }
+
+        private void frmAdminDashboard_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            // Open Login form when the admin dashboard is closed
+            frmLogin login = new frmLogin();
+            login.Show();
+
+            // Hide the current form
+            this.Hide();
+        }
     }
 }
 
