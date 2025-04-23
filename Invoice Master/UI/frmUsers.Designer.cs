@@ -111,7 +111,7 @@
             this.txtFirstName.Location = new System.Drawing.Point(134, 103);
             this.txtFirstName.Name = "txtFirstName";
             this.txtFirstName.Size = new System.Drawing.Size(241, 25);
-            this.txtFirstName.TabIndex = 11;
+            this.txtFirstName.TabIndex = 31;
             this.txtFirstName.TextChanged += new System.EventHandler(this.textFirstName_TextChanged);
             // 
             // txtSurname
@@ -121,7 +121,7 @@
             this.txtSurname.Location = new System.Drawing.Point(134, 134);
             this.txtSurname.Name = "txtSurname";
             this.txtSurname.Size = new System.Drawing.Size(241, 25);
-            this.txtSurname.TabIndex = 13;
+            this.txtSurname.TabIndex = 32;
             // 
             // lblSurname
             // 
@@ -142,7 +142,7 @@
             this.txtAddress.Multiline = true;
             this.txtAddress.Name = "txtAddress";
             this.txtAddress.Size = new System.Drawing.Size(241, 106);
-            this.txtAddress.TabIndex = 28;
+            this.txtAddress.TabIndex = 39;
             // 
             // lblAddress
             // 
@@ -161,7 +161,7 @@
             this.txtEmail.Location = new System.Drawing.Point(134, 229);
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(241, 25);
-            this.txtEmail.TabIndex = 18;
+            this.txtEmail.TabIndex = 34;
             // 
             // lblEmail
             // 
@@ -180,7 +180,7 @@
             this.txtUsername.Location = new System.Drawing.Point(134, 260);
             this.txtUsername.Name = "txtUsername";
             this.txtUsername.Size = new System.Drawing.Size(241, 25);
-            this.txtUsername.TabIndex = 19;
+            this.txtUsername.TabIndex = 35;
             // 
             // lblUsername
             // 
@@ -200,7 +200,7 @@
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.PasswordChar = '•';
             this.txtPassword.Size = new System.Drawing.Size(241, 25);
-            this.txtPassword.TabIndex = 21;
+            this.txtPassword.TabIndex = 36;
             // 
             // lblPassword
             // 
@@ -229,7 +229,7 @@
             this.txtContact.Location = new System.Drawing.Point(134, 358);
             this.txtContact.Name = "txtContact";
             this.txtContact.Size = new System.Drawing.Size(241, 25);
-            this.txtContact.TabIndex = 27;
+            this.txtContact.TabIndex = 37;
             // 
             // lblContact
             // 
@@ -252,7 +252,7 @@
             this.cmbUserRole.Location = new System.Drawing.Point(134, 165);
             this.cmbUserRole.Name = "cmbUserRole";
             this.cmbUserRole.Size = new System.Drawing.Size(241, 25);
-            this.cmbUserRole.TabIndex = 17;
+            this.cmbUserRole.TabIndex = 33;
             // 
             // txtUserID
             // 
@@ -262,7 +262,7 @@
             this.txtUserID.Name = "txtUserID";
             this.txtUserID.ReadOnly = true;
             this.txtUserID.Size = new System.Drawing.Size(241, 25);
-            this.txtUserID.TabIndex = 30;
+            this.txtUserID.TabIndex = 999999;
             // 
             // lblUserID
             // 
@@ -290,7 +290,7 @@
             this.txtSearch.Location = new System.Drawing.Point(504, 74);
             this.txtSearch.Name = "txtSearch";
             this.txtSearch.Size = new System.Drawing.Size(637, 25);
-            this.txtSearch.TabIndex = 40;
+            this.txtSearch.TabIndex = 43;
             this.txtSearch.TextChanged += new System.EventHandler(this.txtSearch_TextChanged);
             // 
             // lblSearch
@@ -311,7 +311,7 @@
             this.btnAdd.Location = new System.Drawing.Point(134, 544);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(241, 35);
-            this.btnAdd.TabIndex = 34;
+            this.btnAdd.TabIndex = 40;
             this.btnAdd.Text = "Ajouter";
             this.btnAdd.UseVisualStyleBackColor = false;
             this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
@@ -324,7 +324,7 @@
             this.btnDelete.Location = new System.Drawing.Point(134, 626);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(241, 35);
-            this.btnDelete.TabIndex = 36;
+            this.btnDelete.TabIndex = 42;
             this.btnDelete.Text = "Supprimer";
             this.btnDelete.UseVisualStyleBackColor = false;
             this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
@@ -337,7 +337,7 @@
             this.btnUpdate.Location = new System.Drawing.Point(134, 585);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(241, 35);
-            this.btnUpdate.TabIndex = 35;
+            this.btnUpdate.TabIndex = 41;
             this.btnUpdate.Text = "Modifier";
             this.btnUpdate.UseVisualStyleBackColor = false;
             this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
