@@ -1,0 +1,12 @@
+C:\Users\elian\Documents\Administratif\Études\ESPL\U5 Dev - Coef 4\Invoice Master\Invoice Master\bin\Debug\Invoice Master.exe.config
+C:\Users\elian\Documents\Administratif\Études\ESPL\U5 Dev - Coef 4\Invoice Master\Invoice Master\bin\Debug\Invoice Master.exe
+C:\Users\elian\Documents\Administratif\Études\ESPL\U5 Dev - Coef 4\Invoice Master\Invoice Master\bin\Debug\Invoice Master.pdb
+C:\Users\elian\Documents\Administratif\Études\ESPL\U5 Dev - Coef 4\Invoice Master\Invoice Master\obj\Debug\Invoice Master.csproj.AssemblyReference.cache
+C:\Users\elian\Documents\Administratif\Études\ESPL\U5 Dev - Coef 4\Invoice Master\Invoice Master\obj\Debug\Invoice_Master.frmAdminDashboard.resources
+C:\Users\elian\Documents\Administratif\Études\ESPL\U5 Dev - Coef 4\Invoice Master\Invoice Master\obj\Debug\Invoice_Master.Properties.Resources.resources
+C:\Users\elian\Documents\Administratif\Études\ESPL\U5 Dev - Coef 4\Invoice Master\Invoice Master\obj\Debug\Invoice Master.csproj.GenerateResource.cache
+C:\Users\elian\Documents\Administratif\Études\ESPL\U5 Dev - Coef 4\Invoice Master\Invoice Master\obj\Debug\Invoice Master.csproj.CoreCompileInputs.cache
+C:\Users\elian\Documents\Administratif\Études\ESPL\U5 Dev - Coef 4\Invoice Master\Invoice Master\obj\Debug\Invoice Master.exe
+C:\Users\elian\Documents\Administratif\Études\ESPL\U5 Dev - Coef 4\Invoice Master\Invoice Master\obj\Debug\Invoice Master.pdb
+C:\Users\elian\Documents\Administratif\Études\ESPL\U5 Dev - Coef 4\Invoice Master\Invoice Master\obj\Debug\Invoice_Master.frmUserDashboard.resources
+C:\Users\elian\Documents\Administratif\Études\ESPL\U5 Dev - Coef 4\Invoice Master\Invoice Master\obj\Debug\Invoice_Master.UI.frmUsers.resources
