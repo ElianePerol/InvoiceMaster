@@ -69,8 +69,8 @@ namespace Invoice_Master.DAL
             {
                 // SQL query to insert data into the tbl_products table
                 string sql = "INSERT INTO tbl_products " +
-                    "(name, category, descriptipon, rate, qty, added_date, added_by) " +
-                    "VALUES (@name, @category, @descriptipon, @rate, @qty, @added_date, @added_by)";
+                    "(name, category, description, rate, added_date, added_by) " +
+                    "VALUES (@name, @category, @description, @rate, @added_date, @added_by)";
 
                 // SqlCommand to execute the SQL query
                 SqlCommand cmd = new SqlCommand(sql, conn);
@@ -80,7 +80,6 @@ namespace Invoice_Master.DAL
                 cmd.Parameters.AddWithValue("@category", p.category);
                 cmd.Parameters.AddWithValue("@description", p.description);
                 cmd.Parameters.AddWithValue("@rate", p.rate);
-                cmd.Parameters.AddWithValue("@qty", p.qty);
                 cmd.Parameters.AddWithValue("@added_date", p.added_date);
                 cmd.Parameters.AddWithValue("@added_by", p.added_by);
 
@@ -119,7 +118,7 @@ namespace Invoice_Master.DAL
             {
                 // SQL query to update data in the tbl_products table
                 string sql = "UPDATE tbl_products SET name=@name, category=@category," +
-                    "description=@description, rate=@rate, qty=@qty," +
+                    "description=@description, rate=@rate," +
                     "added_date=@added_date, added_by=@added_by WHERE id=@id;";
 
                 // SqlCommand to execute the SQL query
@@ -130,7 +129,6 @@ namespace Invoice_Master.DAL
                 cmd.Parameters.AddWithValue("@category", p.category);
                 cmd.Parameters.AddWithValue("@description", p.description);
                 cmd.Parameters.AddWithValue("@rate", p.rate);
-                cmd.Parameters.AddWithValue("@qty", p.qty);
                 cmd.Parameters.AddWithValue("@added_date", p.added_date);
                 cmd.Parameters.AddWithValue("@added_by", p.added_by);
                 cmd.Parameters.AddWithValue("@id", p.id);
@@ -248,6 +246,71 @@ namespace Invoice_Master.DAL
             // Return the DataTable with the data
             return dt;
         }
+        #endregion
+
+        #region Search Product for Transaction module
+
+        public ProductsBLL SearchProductTransaction(string keywords)
+        {
+            ProductsBLL p = new ProductsBLL();
+
+            // Connection to the database
+            SqlConnection conn = new SqlConnection(myconnstrng);
+
+            // DataTable to hold the data
+            DataTable dt = new DataTable();
+
+            // SQL query to search for dealers and customers in the tbl_products table
+            var sql = @"SELECT name, rate FROM tbl_products 
+                WHERE CONVERT(varchar(50), id) LIKE @kw OR name LIKE @kw;";
+
+            try
+            {
+                // SqlCommand to execute the SQL query
+                var cmd = new SqlCommand(sql, conn);
+
+                // Add parameters to the SqlCommand
+                cmd.Parameters.AddWithValue("@kw", "%" + keywords + "%");
+
+                // SqlDataAdapter to fill the DataTable with the data
+                var adapter = new SqlDataAdapter(cmd);
+
+                // Open the connection to the database
+                conn.Open();
+
+                // Fill the DataTable with the data from the database
+                adapter.Fill(dt);
+
+
+                // If there are values in the DataTable, they need to be savec in the DealerCustomer BLL
+                if (dt.Rows.Count > 0)
+                {
+                    p.name = dt.Rows[0]["name"].ToString();
+                    p.rate = decimal.Parse(dt.Rows[0]["rate"].ToString());
+
+                }
+            }
+            catch (SqlException ex)
+            {
+                // Show an error message if there is a SQL exception
+                MessageBox.Show("Erreur SQL : " + ex.Message);
+            }
+            catch (Exception ex)
+            {
+                // Show an error message if there is a general exception
+                MessageBox.Show("Erreur : " + ex.Message);
+            }
+            finally
+            {
+                // Close the connection to the database
+                conn.Close();
+            }
+            // Return the DataTable with the data
+
+            return p;
+
+        }
+
         #endregion
     }
 }

@@ -56,7 +56,6 @@ namespace Invoice_Master.UI
             p.category = cmbCategory.Text;
             p.description = txtDescription.Text;
             p.rate = decimal.Parse(txtRate.Text);
-            p.qty = decimal.Parse(txtQty.Text);
             p.added_date = DateTime.Now;
 
             // Getting the logged in user info
@@ -95,7 +94,6 @@ namespace Invoice_Master.UI
             cmbCategory.SelectedIndex = -1;
             txtDescription.Text = "";
             txtRate.Text = "";
-            txtQty.Text = "";
             txtSearch.Text = "";
         }
 
@@ -110,17 +108,16 @@ namespace Invoice_Master.UI
             cmbCategory.Text = dgvProducts.Rows[rowIndex].Cells[2].Value.ToString();
             txtDescription.Text = dgvProducts.Rows[rowIndex].Cells[3].Value.ToString();
             txtRate.Text = dgvProducts.Rows[rowIndex].Cells[4].Value.ToString();
-            txtQty.Text = dgvProducts.Rows[rowIndex].Cells[5].Value.ToString();
         }
 
         private void btnUpdate_Click(object sender, EventArgs e)
         {
             // Getting data from UI
+            p.id = Convert.ToInt32(txtProductID.Text);
             p.name = txtName.Text;
             p.category = cmbCategory.Text;
             p.description = txtDescription.Text;
             p.rate = decimal.Parse(txtRate.Text);
-            p.qty = decimal.Parse(txtQty.Text);
             p.added_date = DateTime.Now;
 
             // Getting the logged in user info

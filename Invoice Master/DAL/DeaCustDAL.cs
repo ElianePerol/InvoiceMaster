@@ -249,5 +249,73 @@ namespace Invoice_Master.DAL
             return dt;
         }
         #endregion
+
+        #region Search Dealer or Customer for Transaction module
+
+        public DeaCustBLL SearchDealerCustomerTransaction(string keywords)
+        {
+            DeaCustBLL dc = new DeaCustBLL();
+
+            // Connection to the database
+            SqlConnection conn = new SqlConnection(myconnstrng);
+
+            // DataTable to hold the data
+            DataTable dt = new DataTable();
+
+            // SQL query to search for dealers and customers in the tbl_dea_cust table
+            var sql = @"SELECT name, email, contact, address FROM tbl_dea_cust 
+                WHERE CONVERT(varchar(50), id) LIKE @kw OR name LIKE @kw;";
+
+            try
+            {
+                // SqlCommand to execute the SQL query
+                var cmd = new SqlCommand(sql, conn);
+
+                // Add parameters to the SqlCommand
+                cmd.Parameters.AddWithValue("@kw", "%" + keywords + "%");
+
+                // SqlDataAdapter to fill the DataTable with the data
+                var adapter = new SqlDataAdapter(cmd);
+
+                // Open the connection to the database
+                conn.Open();
+
+                // Fill the DataTable with the data from the database
+                adapter.Fill(dt);
+
+
+                // If there are values in the DataTable, they need to be savec in the DealerCustomer BLL
+                if (dt.Rows.Count > 0)
+                {
+                    dc.name = dt.Rows[0]["name"].ToString();
+                    dc.email = dt.Rows[0]["email"].ToString();
+                    dc.contact = dt.Rows[0]["contact"].ToString();
+                    dc.address = dt.Rows[0]["address"].ToString();
+
+                }
+            }
+            catch (SqlException ex)
+            {
+                // Show an error message if there is a SQL exception
+                MessageBox.Show("Erreur SQL : " + ex.Message);
+            }
+            catch (Exception ex)
+            {
+                // Show an error message if there is a general exception
+                MessageBox.Show("Erreur : " + ex.Message);
+            }
+            finally
+            {
+                // Close the connection to the database
+                conn.Close();
+            }
+            // Return the DataTable with the data
+
+            return dc;
+
+        }
+
+        #endregion
+
     }
 }

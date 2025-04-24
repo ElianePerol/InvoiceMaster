@@ -47,8 +47,6 @@
             this.txtRate = new System.Windows.Forms.TextBox();
             this.lblCategory = new System.Windows.Forms.Label();
             this.lblRate = new System.Windows.Forms.Label();
-            this.lblQty = new System.Windows.Forms.Label();
-            this.txtQty = new System.Windows.Forms.TextBox();
             this.cmbCategory = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProducts)).BeginInit();
             this.pnlHeader.SuspendLayout();
@@ -60,7 +58,7 @@
             this.btnUpdate.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
             this.btnUpdate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnUpdate.Font = new System.Drawing.Font("Segoe UI Variable Display", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnUpdate.Location = new System.Drawing.Point(135, 410);
+            this.btnUpdate.Location = new System.Drawing.Point(135, 387);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(241, 35);
             this.btnUpdate.TabIndex = 1000035;
@@ -73,7 +71,7 @@
             this.btnDelete.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
             this.btnDelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDelete.Font = new System.Drawing.Font("Segoe UI Variable Display", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDelete.Location = new System.Drawing.Point(135, 451);
+            this.btnDelete.Location = new System.Drawing.Point(135, 428);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(241, 35);
             this.btnDelete.TabIndex = 1000036;
@@ -86,7 +84,7 @@
             this.btnAdd.BackColor = System.Drawing.Color.LightGreen;
             this.btnAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAdd.Font = new System.Drawing.Font("Segoe UI Variable Display", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAdd.Location = new System.Drawing.Point(135, 369);
+            this.btnAdd.Location = new System.Drawing.Point(135, 346);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(241, 35);
             this.btnAdd.TabIndex = 1000034;
@@ -244,25 +242,6 @@
             this.lblRate.TabIndex = 1000038;
             this.lblRate.Text = "Prix";
             // 
-            // lblQty
-            // 
-            this.lblQty.AutoSize = true;
-            this.lblQty.Font = new System.Drawing.Font("Segoe UI Variable Display", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblQty.Location = new System.Drawing.Point(14, 312);
-            this.lblQty.Name = "lblQty";
-            this.lblQty.Size = new System.Drawing.Size(58, 17);
-            this.lblQty.TabIndex = 1000040;
-            this.lblQty.Text = "Quantité";
-            // 
-            // txtQty
-            // 
-            this.txtQty.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtQty.Font = new System.Drawing.Font("Segoe UI Symbol", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtQty.Location = new System.Drawing.Point(135, 310);
-            this.txtQty.Name = "txtQty";
-            this.txtQty.Size = new System.Drawing.Size(241, 25);
-            this.txtQty.TabIndex = 1000033;
-            // 
             // cmbCategory
             // 
             this.cmbCategory.Font = new System.Drawing.Font("Segoe UI Variable Display", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -279,8 +258,6 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1172, 706);
             this.Controls.Add(this.cmbCategory);
-            this.Controls.Add(this.txtQty);
-            this.Controls.Add(this.lblQty);
             this.Controls.Add(this.lblRate);
             this.Controls.Add(this.txtRate);
             this.Controls.Add(this.lblCategory);
@@ -331,8 +308,6 @@
         private System.Windows.Forms.TextBox txtRate;
         private System.Windows.Forms.Label lblCategory;
         private System.Windows.Forms.Label lblRate;
-        private System.Windows.Forms.Label lblQty;
-        private System.Windows.Forms.TextBox txtQty;
         private System.Windows.Forms.ComboBox cmbCategory;
     }
 }
