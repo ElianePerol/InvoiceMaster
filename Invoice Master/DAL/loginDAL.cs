@@ -10,11 +10,11 @@ using Invoice_Master.BLL;
 
 namespace Invoice_Master.DAL
 {
-    internal class loginDAL
+    internal class LoginDAL
     {
         static string myconnstrng = ConfigurationManager.ConnectionStrings["connstrng"].ConnectionString;
 
-        public bool loginCheck(loginBLL l)
+        public bool loginCheck(LoginBLL l)
         {
             bool isSuccess = false;
 

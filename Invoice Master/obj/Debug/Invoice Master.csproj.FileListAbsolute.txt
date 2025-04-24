@@ -97,3 +97,7 @@ C:\Users\elian\Documents\Administratif\Études\ESPL\U5 Dev - Coef 4\Invoice Mast
 C:\Users\elian\Documents\Administratif\Études\ESPL\U5 Dev - Coef 4\Invoice Master\Invoice Master\obj\Debug\Invoice .E45E858A.Up2Date
 C:\Users\elian\Documents\Administratif\Études\ESPL\U5 Dev - Coef 4\Invoice Master\Invoice Master\obj\Debug\Invoice Master.exe
 C:\Users\elian\Documents\Administratif\Études\ESPL\U5 Dev - Coef 4\Invoice Master\Invoice Master\obj\Debug\Invoice Master.pdb
+C:\Users\elian\Documents\Administratif\Études\ESPL\U5 Dev - Coef 4\Invoice Master\Invoice Master\obj\Debug\Invoice_Master.UI.frmCategories.resources
+C:\Users\elian\Documents\Administratif\Études\ESPL\U5 Dev - Coef 4\Invoice Master\Invoice Master\obj\Debug\Invoice_Master.UI.frmProducts.resources
+C:\Users\elian\Documents\Administratif\Études\ESPL\U5 Dev - Coef 4\Invoice Master\Invoice Master\obj\Debug\Invoice_Master.UI.frmDeaCust.resources
+C:\Users\elian\Documents\Administratif\Études\ESPL\U5 Dev - Coef 4\Invoice Master\Invoice Master\obj\Debug\Invoice_Master.UI.frmPurchasesAndSales.resources

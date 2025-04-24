@@ -148,7 +148,7 @@
             // pboxClose
             // 
             this.pboxClose.Image = ((System.Drawing.Image)(resources.GetObject("pboxClose.Image")));
-            this.pboxClose.Location = new System.Drawing.Point(432, 9);
+            this.pboxClose.Location = new System.Drawing.Point(432, 5);
             this.pboxClose.Name = "pboxClose";
             this.pboxClose.Size = new System.Drawing.Size(33, 27);
             this.pboxClose.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -161,7 +161,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(85)))), ((int)(((byte)(78)))));
-            this.ClientSize = new System.Drawing.Size(474, 522);
+            this.ClientSize = new System.Drawing.Size(468, 512);
             this.Controls.Add(this.pboxClose);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;

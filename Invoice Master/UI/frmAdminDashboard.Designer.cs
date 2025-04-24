@@ -41,6 +41,7 @@
             this.lblAppFName = new System.Windows.Forms.Label();
             this.lblAppLName = new System.Windows.Forms.Label();
             this.lblSHead = new System.Windows.Forms.Label();
+            this.fournisseursEtClientsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pnlFooter.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -74,6 +75,7 @@
             this.utilisateursToolStripMenuItem,
             this.catégorieToolStripMenuItem,
             this.produitsToolStripMenuItem,
+            this.fournisseursEtClientsToolStripMenuItem,
             this.inventairesToolStripMenuItem,
             this.transactionsToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
@@ -92,20 +94,22 @@
             // catégorieToolStripMenuItem
             // 
             this.catégorieToolStripMenuItem.Name = "catégorieToolStripMenuItem";
-            this.catégorieToolStripMenuItem.Size = new System.Drawing.Size(70, 20);
-            this.catégorieToolStripMenuItem.Text = "Catégorie";
+            this.catégorieToolStripMenuItem.Size = new System.Drawing.Size(75, 20);
+            this.catégorieToolStripMenuItem.Text = "Catégories";
+            this.catégorieToolStripMenuItem.Click += new System.EventHandler(this.catégorieToolStripMenuItem_Click);
             // 
             // produitsToolStripMenuItem
             // 
             this.produitsToolStripMenuItem.Name = "produitsToolStripMenuItem";
             this.produitsToolStripMenuItem.Size = new System.Drawing.Size(63, 20);
             this.produitsToolStripMenuItem.Text = "Produits";
+            this.produitsToolStripMenuItem.Click += new System.EventHandler(this.produitsToolStripMenuItem_Click);
             // 
             // inventairesToolStripMenuItem
             // 
             this.inventairesToolStripMenuItem.Name = "inventairesToolStripMenuItem";
-            this.inventairesToolStripMenuItem.Size = new System.Drawing.Size(76, 20);
-            this.inventairesToolStripMenuItem.Text = "Inventaires";
+            this.inventairesToolStripMenuItem.Size = new System.Drawing.Size(71, 20);
+            this.inventairesToolStripMenuItem.Text = "Inventaire";
             // 
             // transactionsToolStripMenuItem
             // 
@@ -131,9 +135,8 @@
             this.lblLoggedInUser.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(85)))), ((int)(((byte)(78)))));
             this.lblLoggedInUser.Location = new System.Drawing.Point(92, 28);
             this.lblLoggedInUser.Name = "lblLoggedInUser";
-            this.lblLoggedInUser.Size = new System.Drawing.Size(81, 17);
+            this.lblLoggedInUser.Size = new System.Drawing.Size(0, 17);
             this.lblLoggedInUser.TabIndex = 3;
-            this.lblLoggedInUser.Text = "Eliane Perol";
             // 
             // lblAppFName
             // 
@@ -170,6 +173,13 @@
             this.lblSHead.TabIndex = 6;
             this.lblSHead.Text = "Facturation et inventaire";
             this.lblSHead.Click += new System.EventHandler(this.lblSHead_Click);
+            // 
+            // fournisseursEtClientsToolStripMenuItem
+            // 
+            this.fournisseursEtClientsToolStripMenuItem.Name = "fournisseursEtClientsToolStripMenuItem";
+            this.fournisseursEtClientsToolStripMenuItem.Size = new System.Drawing.Size(137, 20);
+            this.fournisseursEtClientsToolStripMenuItem.Text = "Fournisseurs et Clients";
+            this.fournisseursEtClientsToolStripMenuItem.Click += new System.EventHandler(this.fournisseursEtClientsToolStripMenuItem_Click);
             // 
             // frmAdminDashboard
             // 
@@ -215,6 +225,7 @@
         private System.Windows.Forms.Label lblAppFName;
         private System.Windows.Forms.Label lblAppLName;
         private System.Windows.Forms.Label lblSHead;
+        private System.Windows.Forms.ToolStripMenuItem fournisseursEtClientsToolStripMenuItem;
     }
 }
 

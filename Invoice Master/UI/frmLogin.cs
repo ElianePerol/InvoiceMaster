@@ -19,8 +19,10 @@ namespace Invoice_Master.UI
             InitializeComponent();
         }
 
-        loginBLL l = new loginBLL();
-        loginDAL dal = new loginDAL();
+        LoginBLL l = new LoginBLL();
+        LoginDAL dal = new LoginDAL();
+
+        public static string loggedIn;
 
         private void pboxClose_Click(object sender, EventArgs e)
         {
@@ -39,6 +41,7 @@ namespace Invoice_Master.UI
             {
                 // Login success
                 MessageBox.Show("Connexion réussie");
+                loggedIn = l.username;
 
                 // Need to open respective form based on the user role
                 switch (l.role)

@@ -29,9 +29,7 @@
         private void InitializeComponent()
         {
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.utilisateursToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.catégorieToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.produitsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.fournisseursEtClientsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.lblLoggedInUser = new System.Windows.Forms.Label();
             this.lblUser = new System.Windows.Forms.Label();
             this.lblSHead = new System.Windows.Forms.Label();
@@ -39,6 +37,9 @@
             this.lblAppFName = new System.Windows.Forms.Label();
             this.pnlFooter = new System.Windows.Forms.Panel();
             this.lblFooter = new System.Windows.Forms.Label();
+            this.achatsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.ventesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.inventairesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.pnlFooter.SuspendLayout();
             this.SuspendLayout();
@@ -46,33 +47,22 @@
             // menuStrip1
             // 
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.utilisateursToolStripMenuItem,
-            this.catégorieToolStripMenuItem,
-            this.produitsToolStripMenuItem});
+            this.achatsToolStripMenuItem,
+            this.ventesToolStripMenuItem,
+            this.inventairesToolStripMenuItem,
+            this.fournisseursEtClientsToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(1485, 24);
             this.menuStrip1.TabIndex = 2;
             this.menuStrip1.Text = "menuStripTop";
             // 
-            // utilisateursToolStripMenuItem
+            // fournisseursEtClientsToolStripMenuItem
             // 
-            this.utilisateursToolStripMenuItem.Name = "utilisateursToolStripMenuItem";
-            this.utilisateursToolStripMenuItem.Size = new System.Drawing.Size(50, 20);
-            this.utilisateursToolStripMenuItem.Text = "Achat";
-            this.utilisateursToolStripMenuItem.Click += new System.EventHandler(this.utilisateursToolStripMenuItem_Click);
-            // 
-            // catégorieToolStripMenuItem
-            // 
-            this.catégorieToolStripMenuItem.Name = "catégorieToolStripMenuItem";
-            this.catégorieToolStripMenuItem.Size = new System.Drawing.Size(48, 20);
-            this.catégorieToolStripMenuItem.Text = "Vente";
-            // 
-            // produitsToolStripMenuItem
-            // 
-            this.produitsToolStripMenuItem.Name = "produitsToolStripMenuItem";
-            this.produitsToolStripMenuItem.Size = new System.Drawing.Size(71, 20);
-            this.produitsToolStripMenuItem.Text = "Inventaire";
+            this.fournisseursEtClientsToolStripMenuItem.Name = "fournisseursEtClientsToolStripMenuItem";
+            this.fournisseursEtClientsToolStripMenuItem.Size = new System.Drawing.Size(137, 20);
+            this.fournisseursEtClientsToolStripMenuItem.Text = "Fournisseurs et Clients";
+            this.fournisseursEtClientsToolStripMenuItem.Click += new System.EventHandler(this.fournisseursEtClientsToolStripMenuItem_Click);
             // 
             // lblLoggedInUser
             // 
@@ -81,9 +71,8 @@
             this.lblLoggedInUser.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(85)))), ((int)(((byte)(78)))));
             this.lblLoggedInUser.Location = new System.Drawing.Point(91, 24);
             this.lblLoggedInUser.Name = "lblLoggedInUser";
-            this.lblLoggedInUser.Size = new System.Drawing.Size(81, 17);
+            this.lblLoggedInUser.Size = new System.Drawing.Size(0, 17);
             this.lblLoggedInUser.TabIndex = 5;
-            this.lblLoggedInUser.Text = "Eliane Perol";
             // 
             // lblUser
             // 
@@ -149,6 +138,26 @@
             this.lblFooter.TabIndex = 0;
             this.lblFooter.Text = "Développé par Eliane Perol";
             // 
+            // achatsToolStripMenuItem
+            // 
+            this.achatsToolStripMenuItem.Name = "achatsToolStripMenuItem";
+            this.achatsToolStripMenuItem.Size = new System.Drawing.Size(55, 20);
+            this.achatsToolStripMenuItem.Text = "Achats";
+            this.achatsToolStripMenuItem.Click += new System.EventHandler(this.achatsToolStripMenuItem_Click);
+            // 
+            // ventesToolStripMenuItem
+            // 
+            this.ventesToolStripMenuItem.Name = "ventesToolStripMenuItem";
+            this.ventesToolStripMenuItem.Size = new System.Drawing.Size(53, 20);
+            this.ventesToolStripMenuItem.Text = "Ventes";
+            this.ventesToolStripMenuItem.Click += new System.EventHandler(this.ventesToolStripMenuItem_Click);
+            // 
+            // inventairesToolStripMenuItem
+            // 
+            this.inventairesToolStripMenuItem.Name = "inventairesToolStripMenuItem";
+            this.inventairesToolStripMenuItem.Size = new System.Drawing.Size(76, 20);
+            this.inventairesToolStripMenuItem.Text = "Inventaires";
+            // 
             // frmUserDashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -167,6 +176,7 @@
             this.Text = "Tableau de bord utilisateur";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.frmUserDashboard_FormClosed);
+            this.Load += new System.EventHandler(this.frmUserDashboard_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.pnlFooter.ResumeLayout(false);
@@ -179,9 +189,6 @@
         #endregion
 
         private System.Windows.Forms.MenuStrip menuStrip1;
-        private System.Windows.Forms.ToolStripMenuItem utilisateursToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem catégorieToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem produitsToolStripMenuItem;
         private System.Windows.Forms.Label lblLoggedInUser;
         private System.Windows.Forms.Label lblUser;
         private System.Windows.Forms.Label lblSHead;
@@ -189,5 +196,9 @@
         private System.Windows.Forms.Label lblAppFName;
         private System.Windows.Forms.Panel pnlFooter;
         private System.Windows.Forms.Label lblFooter;
+        private System.Windows.Forms.ToolStripMenuItem fournisseursEtClientsToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem achatsToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem ventesToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem inventairesToolStripMenuItem;
     }
 }

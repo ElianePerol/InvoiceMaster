@@ -26,37 +26,37 @@ namespace Invoice_Master
 
         private void frmAdminDashboard_Load(object sender, EventArgs e)
         {
-            // code à exécuter au chargement du formulaire
+            lblLoggedInUser.Text = frmLogin.loggedIn;
         }
 
         private void panel1_Paint(object sender, PaintEventArgs e)
         {
-            // si vous n’avez rien à dessiner, laissez vide
+            
         }
 
         private void label1_Click(object sender, EventArgs e)
         {
-            // gestion du clic sur lblFooter
+        
         }
 
         private void lblUser_Click(object sender, EventArgs e)
         {
-            // gestion du clic éventuel sur lblUser
+            
         }
 
         private void lblAppFName_Click(object sender, EventArgs e)
         {
-            // gestion du clic sur INVOICE
+           
         }
 
         private void lblAppLName_Click(object sender, EventArgs e)
         {
-            // gestion du clic sur MASTER
+            
         }
 
         private void lblSHead_Click(object sender, EventArgs e)
         {
-            // gestion du clic sur le sous-titre
+            
         }
 
         private void frmAdminDashboard_FormClosed(object sender, FormClosedEventArgs e)
@@ -68,6 +68,23 @@ namespace Invoice_Master
             // Hide the current form
             this.Hide();
         }
+
+        private void catégorieToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmCategories category = new frmCategories();
+            category.Show();
+        }
+
+        private void produitsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmProducts product = new frmProducts();
+            product.Show();
+        }
+
+        private void fournisseursEtClientsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmDeaCust product = new frmDeaCust();
+            product.Show();
+        }
     }
 }
-

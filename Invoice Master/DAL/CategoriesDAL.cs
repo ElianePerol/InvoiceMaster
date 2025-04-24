@@ -1,18 +1,17 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Configuration;
-using System.Data;
-using Microsoft.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Windows.Forms;
+using Microsoft.Data.SqlClient;
+using System.Configuration;
 using Invoice_Master.BLL;
-
+using System.Data;
+using System.Windows.Forms;
 
 namespace Invoice_Master.DAL
 {
-    internal class UserDAL
+    internal class CategoriesDAL
     {
         static string myconnstrng = ConfigurationManager.ConnectionStrings["connstrng"].ConnectionString;
 
@@ -27,8 +26,8 @@ namespace Invoice_Master.DAL
 
             try
             {
-                // SQL query to select all data from the tbl_users table
-                string sql = "SELECT * FROM tbl_users";
+                // SQL query to select all data from the tbl_categories table
+                string sql = "SELECT * FROM tbl_categories";
 
                 // SqlCommand to execute the SQL query
                 SqlCommand cmd = new SqlCommand(sql, conn);
@@ -58,7 +57,7 @@ namespace Invoice_Master.DAL
         #endregion
 
         #region Insert Data into Database
-        public bool Insert(UserBLL u)
+        public bool Insert(CategoriesBLL c)
         {
             // Checks if the data was inserted successfully
             bool isSuccess = false;
@@ -68,27 +67,19 @@ namespace Invoice_Master.DAL
 
             try
             {
-                // SQL query to insert data into the tbl_users table
-                string sql = "INSERT INTO tbl_users " +
-                    "(first_name, surname, email, username, password, " +
-                    "contact, address, role, added_date, added_by) " +
-                    "VALUES (@first_name, @surname, @email, @username, @password, " +
-                    "@contact, @address, @role, @added_date, @added_by)";
+                // SQL query to insert data into the tbl_categories table
+                string sql = "INSERT INTO tbl_categories " +
+                    "(title, description, added_date, added_by) " +
+                    "VALUES (@title, @description, @added_date, @added_by)";
 
                 // SqlCommand to execute the SQL query
                 SqlCommand cmd = new SqlCommand(sql, conn);
 
                 // Add parameters to the SqlCommand
-                cmd.Parameters.AddWithValue("@first_name", u.first_name);
-                cmd.Parameters.AddWithValue("@surname", u.surname);
-                cmd.Parameters.AddWithValue("@email", u.email);
-                cmd.Parameters.AddWithValue("@username", u.username);
-                cmd.Parameters.AddWithValue("@password", u.password);
-                cmd.Parameters.AddWithValue("@contact", u.contact);
-                cmd.Parameters.AddWithValue("@address", u.address);
-                cmd.Parameters.AddWithValue("@role", u.role);
-                cmd.Parameters.AddWithValue("@added_date", u.added_date);
-                cmd.Parameters.AddWithValue("@added_by", u.added_by);
+                cmd.Parameters.AddWithValue("@title", c.title);
+                cmd.Parameters.AddWithValue("@description", c.description);
+                cmd.Parameters.AddWithValue("@added_date", c.added_date);
+                cmd.Parameters.AddWithValue("@added_by", c.added_by);
 
                 // Open the connection to the database
                 conn.Open();
@@ -113,7 +104,7 @@ namespace Invoice_Master.DAL
         #endregion
 
         #region Update Data in Database
-        public bool Update(UserBLL u)
+        public bool Update(CategoriesBLL c)
         {
             // Checks if the data was updated successfully
             bool isSuccess = false;
@@ -123,29 +114,23 @@ namespace Invoice_Master.DAL
 
             try
             {
-                // SQL query to update data in the tbl_users table
-                string sql = "UPDATE tbl_users SET first_name=@first_name, surname=@surname, " +
-                    "email=@email, username=@username, password=@password, " +
-                    "contact=@contact, address=@address, role=@role, added_date=@added_date, " +
-                    "added_by=@added_by WHERE id=@id;";
+                // SQL query to update data in the tbl_categories table
+                string sql = "UPDATE tbl_categories SET title=@title, description=@description," +
+                    "added_date=@added_date, added_by=@added_by WHERE id=@id;";
 
                 // SqlCommand to execute the SQL query
                 SqlCommand cmd = new SqlCommand(sql, conn);
 
                 // Add parameters to the SqlCommand
-                cmd.Parameters.AddWithValue("@first_name", u.first_name);
-                cmd.Parameters.AddWithValue("@surname", u.surname);
-                cmd.Parameters.AddWithValue("@email", u.email);
-                cmd.Parameters.AddWithValue("@username", u.username);
-                cmd.Parameters.AddWithValue("@password", u.password);
-                cmd.Parameters.AddWithValue("@contact", u.contact);
-                cmd.Parameters.AddWithValue("@address", u.address);
-                cmd.Parameters.AddWithValue("@role", u.role);
-                cmd.Parameters.AddWithValue("@added_date", u.added_date);
-                cmd.Parameters.AddWithValue("@added_by", u.added_by);
-                cmd.Parameters.AddWithValue("@id", u.id);
+                cmd.Parameters.AddWithValue("@title", c.title);
+                cmd.Parameters.AddWithValue("@description", c.description);
+                cmd.Parameters.AddWithValue("@added_date", c.added_date);
+                cmd.Parameters.AddWithValue("@added_by", c.added_by);
+                cmd.Parameters.AddWithValue("@id", c.id);
+
                 // Open the connection to the database
                 conn.Open();
+
                 // Execute the SQL query and check if it was successful
                 int rows = cmd.ExecuteNonQuery();
                 if (rows > 0)
@@ -166,7 +151,7 @@ namespace Invoice_Master.DAL
         #endregion
 
         #region Delete Data from Database
-        public bool Delete(UserBLL u)
+        public bool Delete(CategoriesBLL c)
         {
             // Checks if the data was deleted successfully
             bool isSuccess = false;
@@ -176,14 +161,14 @@ namespace Invoice_Master.DAL
 
             try
             {
-                // SQL query to delete data from the tbl_users table
-                string sql = "DELETE FROM tbl_users WHERE id=@id;";
+                // SQL query to delete data from the tbl_categories table
+                string sql = "DELETE FROM tbl_categories WHERE id=@id;";
 
                 // SqlCommand to execute the SQL query
                 SqlCommand cmd = new SqlCommand(sql, conn);
 
                 // Add parameters to the SqlCommand
-                cmd.Parameters.AddWithValue("@id", u.id);
+                cmd.Parameters.AddWithValue("@id", c.id);
 
                 // Open the connection to the database
                 conn.Open();
@@ -216,11 +201,10 @@ namespace Invoice_Master.DAL
             // DataTable to hold the data
             var conn = new SqlConnection(myconnstrng);
 
-            // SQL query to search for users in the tbl_users table
-            var sql = @"SELECT * FROM tbl_users 
+            // SQL query to search for categories in the tbl_categories table
+            var sql = @"SELECT * FROM tbl_categories 
                 WHERE CONVERT(varchar(50), id) LIKE @kw 
-                OR first_name LIKE @kw 
-                OR surname LIKE @kw OR username LIKE @kw;";
+                OR title LIKE @kw OR description LIKE @kw;";
 
             try
             {
@@ -252,43 +236,13 @@ namespace Invoice_Master.DAL
             finally
             {
                 // Close the connection to the database
-                conn.Close(); 
+                conn.Close();
             }
             // Return the DataTable with the data
             return dt;
         }
         #endregion
 
-        #region Get User ID from username
-        public UserBLL GetIDFromUsername(string username)
-        {
-            UserBLL u = new UserBLL();
-            SqlConnection conn = new SqlConnection(myconnstrng);
-            DataTable dt = new DataTable();
-
-            try
-            {
-                string sql = "SELECT id FROM tbl_users WHERE username='" + username + "'";
-
-                SqlDataAdapter adapter = new SqlDataAdapter(sql, conn);
-                conn.Open();
-
-                adapter.Fill(dt);
-                if (dt.Rows.Count > 0)
-                {
-                    u.id = int.Parse(dt.Rows[0]["id"].ToString());
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-            finally
-            {
-                conn.Close();
-            }
-            return u;
-        }
-        #endregion
+     
     }
 }

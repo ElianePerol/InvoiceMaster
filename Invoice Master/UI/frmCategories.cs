@@ -12,56 +12,50 @@ using Invoice_Master.DAL;
 
 namespace Invoice_Master.UI
 {
-    public partial class frmUsers : Form
+    public partial class frmCategories : Form
     {
-        public frmUsers()
+        public frmCategories()
         {
             InitializeComponent();
         }
 
         private void pictureBoxClose_Click(object sender, EventArgs e)
         {
-            this.Close();
+            this.Hide();
         }
 
-        UserBLL u = new UserBLL();
-        UserDAL dal = new UserDAL();
+        CategoriesBLL c = new CategoriesBLL();
+        CategoriesDAL dal = new CategoriesDAL();
+        UserDAL udal = new UserDAL();
 
-        private void frmUsers_Load(object sender, EventArgs e)
+        private void frmCategories_Load(object sender, EventArgs e)
         {
             // Display all users when the window loads
             DataTable dt = dal.Select();
-            dgvUsers.DataSource = dt;
+            dgvCategories.DataSource = dt;
         }
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
             // Getting data from UI
-            u.first_name = txtFirstName.Text;
-            u.surname = txtSurname.Text;
-            u.email = txtEmail.Text;
-            u.email = txtEmail.Text;
-            u.username = txtUsername.Text;
-            u.password = txtPassword.Text;
-            u.contact = txtContact.Text;
-            u.address = txtAddress.Text;
-            u.role = cmbUserRole.Text;
-            u.added_date = DateTime.Now;
+            c.title = txtTitle.Text;
+            c.description = txtDescription.Text;
+            c.added_date = DateTime.Now;
 
             // Getting the logged in user info
             string loggedUser = frmLogin.loggedIn;
-            UserBLL usr = dal.GetIDFromUsername(loggedUser);
+            UserBLL usr = udal.GetIDFromUsername(loggedUser);
 
-            u.added_by = usr.id;
+            c.added_by = usr.id;
 
             // Inserting data into database
-            bool success = dal.Insert(u);
+            bool success = dal.Insert(c);
 
             // Checking if the data was inserted successfully
             if (success == true)
             {
                 // Data inserted successfully
-                MessageBox.Show("Utilisateur créé avec succès !");
+                MessageBox.Show("Catégorie créée avec succès !");
 
                 // Clearing the fields after successful insertion
                 clear();
@@ -69,75 +63,55 @@ namespace Invoice_Master.UI
             else
             {
                 // Data insertion failed
-                MessageBox.Show("Échec, l'utilisateur n'a pas été créé.");
+                MessageBox.Show("Échec, la catégorie n'a pas été créée.");
             }
 
             //Refreshing Data Grid View
             DataTable dt = dal.Select();
-            dgvUsers.DataSource = dt;
-
+            dgvCategories.DataSource = dt;
         }
 
         private void clear()
         {
-            txtUserID.Text = "";
-            txtFirstName.Text = "";
-            txtSurname.Text = "";
-            txtEmail.Text = "";
-            txtUsername.Text = "";
-            txtPassword.Text = "";
-            txtContact.Text = "";
-            txtAddress.Text = "";
-            cmbUserRole.SelectedIndex = -1;
+            txtCategoryID.Text = "";
+            txtTitle.Text = "";
+            txtDescription.Text = "";
             txtSearch.Text = "";
         }
-
-        private void dgvUsers_RowHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+       
+        private void dgvCategories_RowHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
             //Getting the row index of the clicked row
             int rowIndex = e.RowIndex;
 
             //Setting the values of the selected row to the textboxes
-            txtUserID.Text = dgvUsers.Rows[rowIndex].Cells[0].Value.ToString();
-            txtFirstName.Text = dgvUsers.Rows[rowIndex].Cells[1].Value.ToString();
-            txtSurname.Text = dgvUsers.Rows[rowIndex].Cells[2].Value.ToString();
-            txtEmail.Text = dgvUsers.Rows[rowIndex].Cells[3].Value.ToString();
-            txtUsername.Text = dgvUsers.Rows[rowIndex].Cells[4].Value.ToString();
-            txtPassword.Text = dgvUsers.Rows[rowIndex].Cells[5].Value.ToString();
-            txtContact.Text = dgvUsers.Rows[rowIndex].Cells[6].Value.ToString();
-            txtAddress.Text = dgvUsers.Rows[rowIndex].Cells[7].Value.ToString();
-            cmbUserRole.Text = dgvUsers.Rows[rowIndex].Cells[8].Value.ToString();
-
+            txtCategoryID.Text = dgvCategories.Rows[rowIndex].Cells[0].Value.ToString();
+            txtTitle.Text = dgvCategories.Rows[rowIndex].Cells[1].Value.ToString();
+            txtDescription.Text = dgvCategories.Rows[rowIndex].Cells[2].Value.ToString();
         }
 
         private void btnUpdate_Click(object sender, EventArgs e)
         {
             // Getting data from UI
-            u.id = Convert.ToInt32(txtUserID.Text);
-            u.first_name = txtFirstName.Text;
-            u.surname = txtSurname.Text;
-            u.email = txtEmail.Text;
-            u.username = txtUsername.Text;
-            u.password = txtPassword.Text;
-            u.contact = txtContact.Text;
-            u.address = txtAddress.Text;
-            u.role = cmbUserRole.Text;
-            u.added_date = DateTime.Now;
+            c.id = Convert.ToInt32(txtCategoryID.Text);
+            c.title = txtTitle.Text;
+            c.description = txtDescription.Text;
+            c.added_date = DateTime.Now;
 
             // Getting the logged in user info
             string loggedUser = frmLogin.loggedIn;
-            UserBLL usr = dal.GetIDFromUsername(loggedUser);
+            UserBLL usr = udal.GetIDFromUsername(loggedUser);
 
-            u.added_by = usr.id;
+            c.added_by = usr.id;
 
             // Updating data in database
-            bool success = dal.Update(u);
+            bool success = dal.Update(c);
 
             // Checking if the data was updated successfully
             if (success == true)
             {
                 // Data updated successfully
-                MessageBox.Show("Utilisateur mis à jour avec succès !");
+                MessageBox.Show("Catégorie mise à jour avec succès !");
 
                 // Clearing the fields after successful update
                 clear();
@@ -145,28 +119,27 @@ namespace Invoice_Master.UI
             else
             {
                 // Data update failed
-                MessageBox.Show("Échec, l'utilisateur n'a pas été mis à jour.");
+                MessageBox.Show("Échec, la catégorie n'a pas été mise à jour.");
             }
 
             // Refreshing Data Grid View
             DataTable dt = dal.Select();
-            dgvUsers.DataSource = dt;
-
+            dgvCategories.DataSource = dt;
         }
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
             // Getting data from UI
-            u.id = Convert.ToInt32(txtUserID.Text);
+            c.id = Convert.ToInt32(txtCategoryID.Text);
 
             // Deleting data from database
-            bool success = dal.Delete(u);
+            bool success = dal.Delete(c);
 
             // Checking if the data was deleted successfully
             if (success == true)
             {
                 // Data deleted successfully
-                MessageBox.Show("Utilisateur supprimé avec succès !");
+                MessageBox.Show("Catégorie supprimée avec succès !");
 
                 // Clearing the fields after successful deletion
                 clear();
@@ -174,12 +147,12 @@ namespace Invoice_Master.UI
             else
             {
                 // Data deletion failed
-                MessageBox.Show("Échec, l'utilisateur n'a pas été supprimé.");
+                MessageBox.Show("Échec, la catégorie n'a pas été supprimée.");
             }
 
             // Refreshing Data Grid View
             DataTable dt = dal.Select();
-            dgvUsers.DataSource = dt;
+            dgvCategories.DataSource = dt;
         }
 
         private void txtSearch_TextChanged(object sender, EventArgs e)
@@ -194,18 +167,17 @@ namespace Invoice_Master.UI
                 DataTable dt = dal.Search(keywords);
 
                 // Setting the data source of the DataGridView to the searched data
-                dgvUsers.DataSource = dt;
+                dgvCategories.DataSource = dt;
             }
             else
             {
                 // If search text is empty, show all data
                 DataTable dt = dal.Select();
-                dgvUsers.DataSource = dt;
+                dgvCategories.DataSource = dt;
             }
         }
 
-        private void textFirstName_TextChanged(object sender, EventArgs e) { }
-
-        private void label1_Click(object sender, EventArgs e) { }
+        private void lblFirstName_Click(object sender, EventArgs e) { }
     }
+
 }

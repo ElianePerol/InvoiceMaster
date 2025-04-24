@@ -18,10 +18,7 @@ namespace Invoice_Master
             InitializeComponent();
         }
 
-        private void utilisateursToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-
-        }
+        public static string transactionType;
 
         private void frmUserDashboard_FormClosed(object sender, FormClosedEventArgs e)
         {
@@ -31,6 +28,40 @@ namespace Invoice_Master
 
             // Hide the current form
             this.Hide();
+        }
+
+        private void frmUserDashboard_Load(object sender, EventArgs e)
+        {
+            lblLoggedInUser.Text = frmLogin.loggedIn;
+        }
+
+        private void fournisseursEtClientsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmDeaCust product = new frmDeaCust();
+            product.Show();
+        }
+
+        private void achatsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            // Set value on transactionType static method
+            transactionType = "ACHATS";
+
+            frmPurchasesAndSales purchases = new frmPurchasesAndSales();
+            purchases.Show();
+        }
+
+        private void ventesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            // Set value on transactionType static method
+            transactionType = "VENTES";
+
+            frmPurchasesAndSales sales = new frmPurchasesAndSales();
+            sales.Show();
+        }
+
+        private void utilisateursToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

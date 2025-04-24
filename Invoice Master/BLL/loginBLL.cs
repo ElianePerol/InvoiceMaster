@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Invoice_Master.BLL
 {
-    internal class loginBLL
+    internal class LoginBLL
     {
         public string username { get; set; }
         public string password { get; set; }

@@ -12,56 +12,67 @@ using Invoice_Master.DAL;
 
 namespace Invoice_Master.UI
 {
-    public partial class frmUsers : Form
+    public partial class frmProducts : Form
     {
-        public frmUsers()
+        public frmProducts()
         {
             InitializeComponent();
         }
 
         private void pictureBoxClose_Click(object sender, EventArgs e)
         {
-            this.Close();
+            this.Hide();
         }
 
-        UserBLL u = new UserBLL();
-        UserDAL dal = new UserDAL();
+        CategoriesDAL cdal = new CategoriesDAL();
+        ProductsBLL p = new ProductsBLL();
+        ProductsDAL dal = new ProductsDAL();
+        UserDAL udal = new UserDAL();
 
-        private void frmUsers_Load(object sender, EventArgs e)
+        private void frmProducts_Load(object sender, EventArgs e)
         {
+            // Create DataTable to hold the categories from the Database
+            DataTable categoriesDT = cdal.Select();
+
+            //Specify DataSource for Category ComboBox
+            cmbCategory.DataSource = categoriesDT;
+
+            //Specify Diplay Member and Value Member for ComboBox
+            cmbCategory.DisplayMember = "title";
+            cmbCategory.ValueMember = "title";
+
+            // The ComboBox is showing by default not prefilled
+            cmbCategory.SelectedIndex = -1;
+
             // Display all users when the window loads
             DataTable dt = dal.Select();
-            dgvUsers.DataSource = dt;
+            dgvProducts.DataSource = dt;
         }
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
             // Getting data from UI
-            u.first_name = txtFirstName.Text;
-            u.surname = txtSurname.Text;
-            u.email = txtEmail.Text;
-            u.email = txtEmail.Text;
-            u.username = txtUsername.Text;
-            u.password = txtPassword.Text;
-            u.contact = txtContact.Text;
-            u.address = txtAddress.Text;
-            u.role = cmbUserRole.Text;
-            u.added_date = DateTime.Now;
+            p.name = txtName.Text;
+            p.category = cmbCategory.Text;
+            p.description = txtDescription.Text;
+            p.rate = decimal.Parse(txtRate.Text);
+            p.qty = decimal.Parse(txtQty.Text);
+            p.added_date = DateTime.Now;
 
             // Getting the logged in user info
             string loggedUser = frmLogin.loggedIn;
-            UserBLL usr = dal.GetIDFromUsername(loggedUser);
+            UserBLL usr = udal.GetIDFromUsername(loggedUser);
 
-            u.added_by = usr.id;
+            p.added_by = usr.id;
 
             // Inserting data into database
-            bool success = dal.Insert(u);
+            bool success = dal.Insert(p);
 
             // Checking if the data was inserted successfully
             if (success == true)
             {
                 // Data inserted successfully
-                MessageBox.Show("Utilisateur créé avec succès !");
+                MessageBox.Show("Produit créé avec succès !");
 
                 // Clearing the fields after successful insertion
                 clear();
@@ -69,75 +80,63 @@ namespace Invoice_Master.UI
             else
             {
                 // Data insertion failed
-                MessageBox.Show("Échec, l'utilisateur n'a pas été créé.");
+                MessageBox.Show("Échec, le produit n'a pas été créé.");
             }
 
             //Refreshing Data Grid View
             DataTable dt = dal.Select();
-            dgvUsers.DataSource = dt;
-
+            dgvProducts.DataSource = dt;
         }
 
         private void clear()
         {
-            txtUserID.Text = "";
-            txtFirstName.Text = "";
-            txtSurname.Text = "";
-            txtEmail.Text = "";
-            txtUsername.Text = "";
-            txtPassword.Text = "";
-            txtContact.Text = "";
-            txtAddress.Text = "";
-            cmbUserRole.SelectedIndex = -1;
+            txtProductID.Text = "";
+            txtName.Text = "";
+            cmbCategory.SelectedIndex = -1;
+            txtDescription.Text = "";
+            txtRate.Text = "";
+            txtQty.Text = "";
             txtSearch.Text = "";
         }
 
-        private void dgvUsers_RowHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+        private void dgvProducts_RowHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
             //Getting the row index of the clicked row
             int rowIndex = e.RowIndex;
 
             //Setting the values of the selected row to the textboxes
-            txtUserID.Text = dgvUsers.Rows[rowIndex].Cells[0].Value.ToString();
-            txtFirstName.Text = dgvUsers.Rows[rowIndex].Cells[1].Value.ToString();
-            txtSurname.Text = dgvUsers.Rows[rowIndex].Cells[2].Value.ToString();
-            txtEmail.Text = dgvUsers.Rows[rowIndex].Cells[3].Value.ToString();
-            txtUsername.Text = dgvUsers.Rows[rowIndex].Cells[4].Value.ToString();
-            txtPassword.Text = dgvUsers.Rows[rowIndex].Cells[5].Value.ToString();
-            txtContact.Text = dgvUsers.Rows[rowIndex].Cells[6].Value.ToString();
-            txtAddress.Text = dgvUsers.Rows[rowIndex].Cells[7].Value.ToString();
-            cmbUserRole.Text = dgvUsers.Rows[rowIndex].Cells[8].Value.ToString();
-
+            txtProductID.Text = dgvProducts.Rows[rowIndex].Cells[0].Value.ToString();
+            txtName.Text = dgvProducts.Rows[rowIndex].Cells[1].Value.ToString();
+            cmbCategory.Text = dgvProducts.Rows[rowIndex].Cells[2].Value.ToString();
+            txtDescription.Text = dgvProducts.Rows[rowIndex].Cells[3].Value.ToString();
+            txtRate.Text = dgvProducts.Rows[rowIndex].Cells[4].Value.ToString();
+            txtQty.Text = dgvProducts.Rows[rowIndex].Cells[5].Value.ToString();
         }
 
         private void btnUpdate_Click(object sender, EventArgs e)
         {
             // Getting data from UI
-            u.id = Convert.ToInt32(txtUserID.Text);
-            u.first_name = txtFirstName.Text;
-            u.surname = txtSurname.Text;
-            u.email = txtEmail.Text;
-            u.username = txtUsername.Text;
-            u.password = txtPassword.Text;
-            u.contact = txtContact.Text;
-            u.address = txtAddress.Text;
-            u.role = cmbUserRole.Text;
-            u.added_date = DateTime.Now;
+            p.name = txtName.Text;
+            p.category = cmbCategory.Text;
+            p.description = txtDescription.Text;
+            p.rate = decimal.Parse(txtRate.Text);
+            p.qty = decimal.Parse(txtQty.Text);
+            p.added_date = DateTime.Now;
 
             // Getting the logged in user info
             string loggedUser = frmLogin.loggedIn;
-            UserBLL usr = dal.GetIDFromUsername(loggedUser);
+            UserBLL usr = udal.GetIDFromUsername(loggedUser);
 
-            u.added_by = usr.id;
+            p.added_by = usr.id;
 
             // Updating data in database
-            bool success = dal.Update(u);
+            bool success = dal.Update(p);
 
             // Checking if the data was updated successfully
             if (success == true)
             {
                 // Data updated successfully
-                MessageBox.Show("Utilisateur mis à jour avec succès !");
+                MessageBox.Show("Produit mis à jour avec succès !");
 
                 // Clearing the fields after successful update
                 clear();
@@ -145,28 +144,27 @@ namespace Invoice_Master.UI
             else
             {
                 // Data update failed
-                MessageBox.Show("Échec, l'utilisateur n'a pas été mis à jour.");
+                MessageBox.Show("Échec, le produit n'a pas été mis à jour.");
             }
 
             // Refreshing Data Grid View
             DataTable dt = dal.Select();
-            dgvUsers.DataSource = dt;
-
+            dgvProducts.DataSource = dt;
         }
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
             // Getting data from UI
-            u.id = Convert.ToInt32(txtUserID.Text);
+            p.id = Convert.ToInt32(txtProductID.Text);
 
             // Deleting data from database
-            bool success = dal.Delete(u);
+            bool success = dal.Delete(p);
 
             // Checking if the data was deleted successfully
             if (success == true)
             {
                 // Data deleted successfully
-                MessageBox.Show("Utilisateur supprimé avec succès !");
+                MessageBox.Show("Produit supprimé avec succès !");
 
                 // Clearing the fields after successful deletion
                 clear();
@@ -174,12 +172,12 @@ namespace Invoice_Master.UI
             else
             {
                 // Data deletion failed
-                MessageBox.Show("Échec, l'utilisateur n'a pas été supprimé.");
+                MessageBox.Show("Échec, le produit n'a pas été supprimé.");
             }
 
             // Refreshing Data Grid View
             DataTable dt = dal.Select();
-            dgvUsers.DataSource = dt;
+            dgvProducts.DataSource = dt;
         }
 
         private void txtSearch_TextChanged(object sender, EventArgs e)
@@ -194,18 +192,14 @@ namespace Invoice_Master.UI
                 DataTable dt = dal.Search(keywords);
 
                 // Setting the data source of the DataGridView to the searched data
-                dgvUsers.DataSource = dt;
+                dgvProducts.DataSource = dt;
             }
             else
             {
                 // If search text is empty, show all data
                 DataTable dt = dal.Select();
-                dgvUsers.DataSource = dt;
+                dgvProducts.DataSource = dt;
             }
         }
-
-        private void textFirstName_TextChanged(object sender, EventArgs e) { }
-
-        private void label1_Click(object sender, EventArgs e) { }
     }
 }
