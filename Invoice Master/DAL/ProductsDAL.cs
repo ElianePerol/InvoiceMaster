@@ -312,5 +312,65 @@ namespace Invoice_Master.DAL
         }
 
         #endregion
+
+        #region Get Product ID based on name
+        public ProductsBLL GetProductIDFromName(string name)
+        {
+            ProductsBLL p = new ProductsBLL();
+
+            // Connection to the database
+            SqlConnection conn = new SqlConnection(myconnstrng);
+
+            // DataTable to hold the data
+            DataTable dt = new DataTable();
+
+            // SQL query to get id based on name
+            string sql = "SELECT id from tbl_products WHERE name=@n;";
+
+
+            try
+            {
+                // SqlCommand to execute the SQL query
+                var cmd = new SqlCommand(sql, conn);
+
+                // Add parameters to the SqlCommand
+                cmd.Parameters.AddWithValue("@n", name);
+
+                // SqlDataAdapter to fill the DataTable with the data
+                var adapter = new SqlDataAdapter(cmd);
+
+                // Open the connection to the database
+                conn.Open();
+
+                // Fill the DataTable with the data from the database
+                adapter.Fill(dt);
+
+
+                // If there are values in the DataTable, they need to be savec in the DealerCustomer BLL
+                if (dt.Rows.Count > 0)
+                {
+                    p.id = int.Parse(dt.Rows[0]["id"].ToString());
+
+                }
+            }
+            catch (SqlException ex)
+            {
+                // Show an error message if there is a SQL exception
+                MessageBox.Show("Erreur SQL : " + ex.Message);
+            }
+            catch (Exception ex)
+            {
+                // Show an error message if there is a general exception
+                MessageBox.Show("Erreur : " + ex.Message);
+            }
+            finally
+            {
+                // Close the connection to the database
+                conn.Close();
+            }
+
+            return p;
+        }
+        #endregion
     }
 }

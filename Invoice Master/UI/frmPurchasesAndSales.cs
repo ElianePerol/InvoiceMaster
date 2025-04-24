@@ -6,6 +6,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Transactions;
 using System.Windows.Forms;
 using System.Xml.Linq;
 using Invoice_Master.BLL;
@@ -27,6 +28,10 @@ namespace Invoice_Master.UI
 
         DeaCustDAL dcDAL = new DeaCustDAL();
         ProductsDAL pDAL = new ProductsDAL();
+        UserDAL uDAL = new UserDAL();
+        TransactionDAL tDAL = new TransactionDAL();
+        TransactionDetailDAL tdDAL = new TransactionDetailDAL();
+
         DataTable transactionDT = new DataTable();
 
         private void txtQty_TextChanged(object sender, EventArgs e)
@@ -142,9 +147,9 @@ namespace Invoice_Master.UI
                 // Clear de text boxes
                 txtProductSearch.Text = "";
                 txtProductName.Text = "";
-                txtInventory.Text = "0.00";
+                txtInventory.Text = "0";
                 txtRate.Text = "0.00";
-                txtQty.Text = "0.00";
+                txtQty.Text = "0";
             }
         }
 
@@ -205,7 +210,101 @@ namespace Invoice_Master.UI
             // Display the return amount
             decimal returnAmount = paidAmount - grandTotal;
             txtReturnAmount.Text = returnAmount.ToString();
+        }
 
+        private void btnSave_Click(object sender, EventArgs e)
+        {
+            // Get the values from PurchaseSales form
+            TransactionsBLL transaction = new TransactionsBLL();
+
+            transaction.type = lblTop.Text;
+
+            // Get the Dealer or Customer ID and name
+            string deaCustName = txtDeaCustName.Text;
+            DeaCustBLL dc = dcDAL.GetDeaCustIDFromName(deaCustName);
+
+            transaction.dea_cust_id = dc.id;
+            transaction.grand_total = Math.Round(decimal.Parse(txtGrandTotal.Text), 2);
+            transaction.transaction_date = DateTime.Now;
+            transaction.vat = decimal.Parse(txtVAT.Text);
+            transaction.discount = decimal.Parse(txtDiscount.Text);
+
+            // Get the username of logged in user
+            string username = frmLogin.loggedIn;
+            UserBLL u = uDAL.GetIDFromUsername(username);
+
+            transaction.added_by = u.id;
+            transaction.TransactionDetails = transactionDT;
+
+            // Check if the data was inserted successfully
+            bool isSuccess = false;
+
+            // Insert transaction and transaction details
+            using (TransactionScope scope = new TransactionScope())
+            {
+                int transactionID = -1;
+
+                // Insert transaction
+                bool w = tDAL.InsertTransaction(transaction, out transactionID);
+
+                //Loop to insert transaction details
+                for (int i = 0; i < transactionDT.Rows.Count; i++)
+                {
+                    //Get all the products details
+                    TransactionDetailBLL transactionDetail = new TransactionDetailBLL();
+                    string ProductName = transactionDT.Rows[i][0].ToString();
+                    ProductsBLL p = pDAL.GetProductIDFromName(ProductName);
+
+                    transactionDetail.product_id = p.id;
+                    transactionDetail.rate = decimal.Parse(transactionDT.Rows[i][1].ToString());
+                    transactionDetail.qty = decimal.Parse(transactionDT.Rows[i][2].ToString());
+                    transactionDetail.total = Math.Round(decimal.Parse(transactionDT.Rows[i][3].ToString()), 2);
+                    transactionDetail.dea_cust_id = dc.id;
+                    transactionDetail.added_date = DateTime.Now;
+                    transactionDetail.added_by = u.id;
+
+                    // Insert Transaction Detail into the database
+                    bool y = tdDAL.InsertTransactionDetail(transactionDetail, out _);
+                    isSuccess = w && y;
+                }
+
+                // Complete transaction and clear form
+                if (isSuccess == true)
+                {
+                    // Transaction complete
+                    scope.Complete();
+                    MessageBox.Show("Transaction réalisée avec succès !");
+
+                    // Clear the Added Products Data Grid View
+                    dgvAddedProducts.DataSource = null;
+                    dgvAddedProducts.Rows.Clear();
+
+                    // Clear the Dealer and Customer text boxes
+                    txtDeaCustName.Text = "";
+                    txtEmail.Text = "";
+                    txtContact.Text = "";
+                    txtAddress.Text = "";
+
+                    // Clear the Products text boxes
+                    txtProductSearch.Text = "";
+                    txtProductName.Text = "";
+                    txtInventory.Text = "0";
+                    txtRate.Text = "0";
+                    txtQty.Text = "0";
+
+                    // Clear the Calculation Details text boxes
+                    txtSubTotal.Text = "0";
+                    txtDiscount.Text = "0";
+                    txtVAT.Text = "0";
+                    txtGrandTotal.Text = "0";
+                    txtPaidAmount.Text = "0";
+                    txtReturnAmount.Text = "0";
+                }
+                else
+                {
+                    MessageBox.Show("Échec, la transaction n'a pas abouti.");
+                }
+            }
         }
     }
 }

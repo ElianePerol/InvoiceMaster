@@ -473,6 +473,7 @@
             this.btnSave.TabIndex = 1000096;
             this.btnSave.Text = "Enregister";
             this.btnSave.UseVisualStyleBackColor = false;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // panel3
             // 

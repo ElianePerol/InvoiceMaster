@@ -31,7 +31,8 @@ namespace Invoice_Master.DAL
                 // SQL query to insert data into the tbl_transactions table
                 string sql = "INSERT INTO tbl_transactions " +
                     "(type, dea_cust_id, grand_total, transaction_date, vat, discount, added_by) " +
-                    "VALUES (@type, @dea_cust_id, @grand_total, @transaction_date, @vat, @discount, @added_by)";
+                    "VALUES (@type, @dea_cust_id, @grand_total, @transaction_date, @vat, @discount, @added_by);" +
+                    "SELECT @@IDENTITY;";
 
                 // SqlCommand to execute the SQL query
                 SqlCommand cmd = new SqlCommand(sql, conn);
