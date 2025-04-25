@@ -292,7 +292,7 @@ namespace Invoice_Master.UI
                     // Print the invoice
                     DGVPrinter printer = new DGVPrinter();
 
-                    printer.Title = "\r\nINVOICE MASTER";
+                    printer.Title = "\r\nINVOICE MASTER\r\n";
                     printer.PageNumbers = true;
                     printer.PageNumberInHeader = false;
                     printer.PorportionalColumns = true;
