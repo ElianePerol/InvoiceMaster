@@ -249,7 +249,6 @@ namespace Invoice_Master.DAL
         #endregion
 
         #region Search Product for Transaction module
-
         public ProductsBLL SearchProductTransaction(string keywords)
         {
             ProductsBLL p = new ProductsBLL();
@@ -261,7 +260,7 @@ namespace Invoice_Master.DAL
             DataTable dt = new DataTable();
 
             // SQL query to search for dealers and customers in the tbl_products table
-            var sql = @"SELECT name, rate FROM tbl_products 
+            var sql = @"SELECT name, rate, qty FROM tbl_products 
                 WHERE CONVERT(varchar(50), id) LIKE @kw OR name LIKE @kw;";
 
             try
@@ -287,6 +286,7 @@ namespace Invoice_Master.DAL
                 {
                     p.name = dt.Rows[0]["name"].ToString();
                     p.rate = decimal.Parse(dt.Rows[0]["rate"].ToString());
+                    p.qty = decimal.Parse(dt.Rows[0]["qty"].ToString());
 
                 }
             }
@@ -370,6 +370,183 @@ namespace Invoice_Master.DAL
             }
 
             return p;
+        }
+        #endregion
+
+        #region Get current product quantity based on product ID
+        public decimal GetProductQty(int ProductID)
+        {
+            // Connection to the database
+            SqlConnection conn = new SqlConnection(myconnstrng);
+
+            //  Inititalise the qty variable to be returned
+            decimal qty = 0;
+
+            // DataTable to hold the data
+            DataTable dt = new DataTable();
+
+            // SQL query to search for products in the tbl_products table
+            var sql = "SELECT qty FROM tbl_products WHERE id = @pid";
+
+            try
+            {
+                // SqlCommand to execute the SQL query
+                var cmd = new SqlCommand(sql, conn);
+
+                // Add parameters to the SqlCommand
+                cmd.Parameters.AddWithValue("@pid", ProductID);
+
+                // SqlDataAdapter to fill the DataTable with the data
+                var adapter = new SqlDataAdapter(cmd);
+
+                // Open the connection to the database
+                conn.Open();
+
+                // Fill the DataTable with the data from the database
+                adapter.Fill(dt);
+
+                // Checks if the DataTable has value
+                if (dt.Rows.Count > 0)
+                    qty = decimal.Parse(dt.Rows[0]["qty"].ToString());
+            }
+            catch (Exception ex)
+            {
+                // Show an error message if there is a general exception
+                MessageBox.Show(ex.Message);
+            }
+            finally
+            {
+                // Close the connection to the database
+                conn.Close();
+            }
+
+            return qty;
+        }
+        #endregion
+
+        #region Update Quantity
+        public bool UpdateQuantity(int ProductID, decimal qty)
+        {
+            // Initialise the return variable
+            bool isSuccess = false;
+
+            // Connection to the database
+            SqlConnection conn = new SqlConnection(myconnstrng);
+
+            // SQL query to get id based on name
+            string sql = "UPDATE tbl_products SET qty=@qty WHERE id=@id;";
+
+            try
+            {
+                // SqlCommand to execute the SQL query
+                SqlCommand cmd = new SqlCommand(sql, conn);
+
+                // Add parameters to the SqlCommand
+                cmd.Parameters.AddWithValue("@qty", qty);
+                cmd.Parameters.AddWithValue("@id", ProductID);
+
+                // Open the connection to the database
+                conn.Open();
+
+                // Execute the SQL query and check if it was successful
+                int rows = cmd.ExecuteNonQuery();
+                if (rows > 0)
+                    isSuccess = true; // Data updated successfully
+            }
+            catch (Exception ex)
+            {
+                // Show an error message if there is a general exception
+                MessageBox.Show("Erreur : " + ex.Message);
+            }
+            finally
+            {
+                // Close the connection to the database
+                conn.Close();
+            }
+
+            return isSuccess;
+        }
+        #endregion
+
+        #region Increase Product Quantity
+        public bool IncreaseProduct(int ProductID, decimal IncreaseQty)
+        {
+            // Initialise the return variable
+            bool isSuccess = false;
+
+            // Connection to the database
+            SqlConnection conn = new SqlConnection(myconnstrng);
+
+            // SQL query to get id based on name
+            string sql = "UPDATE tbl_products SET qty=@qty WHERE id=@id;";
+
+            try
+            {
+                // Get current qty to connect database
+                decimal currentQty = GetProductQty(ProductID);
+
+                // Increase the current quantity by the quaantity purchased from dealer
+                decimal newQty = currentQty + IncreaseQty;
+
+                // SqlCommand to execute the SQL query
+                SqlCommand cmd = new SqlCommand(sql, conn);
+
+                // Update the Product Quantity
+                isSuccess = UpdateQuantity(ProductID, newQty);
+            }
+            catch (Exception ex)
+            {
+                // Show an error message if there is a general exception
+                MessageBox.Show("Erreur : " + ex.Message);
+            }
+            finally
+            {
+                // Close the connection to the database
+                conn.Close();
+            }
+
+            return isSuccess;
+        }
+        #endregion
+
+        #region Decrease Product Quantity
+        public bool DecreaseProduct(int ProductID, decimal DecreaseQty)
+        {
+            // Initialise the return variable
+            bool isSuccess = false;
+
+            // Connection to the database
+            SqlConnection conn = new SqlConnection(myconnstrng);
+
+            // SQL query to get id based on name
+            string sql = "UPDATE tbl_products SET qty=@qty WHERE id=@id;";
+
+            try
+            {
+                // Get current qty to connect database
+                decimal currentQty = GetProductQty(ProductID);
+
+                // Decrease the current quantity by the quantity sold to customer
+                decimal newQty = currentQty - DecreaseQty;
+
+                // SqlCommand to execute the SQL query
+                SqlCommand cmd = new SqlCommand(sql, conn);
+
+                // Update the Product Quantity
+                isSuccess = UpdateQuantity(ProductID, newQty);
+            }
+            catch (Exception ex)
+            {
+                // Show an error message if there is a general exception
+                MessageBox.Show("Erreur : " + ex.Message);
+            }
+            finally
+            {
+                // Close the connection to the database
+                conn.Close();
+            }
+
+            return isSuccess;
         }
         #endregion
     }

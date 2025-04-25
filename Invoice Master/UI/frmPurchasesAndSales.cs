@@ -226,7 +226,7 @@ namespace Invoice_Master.UI
             transaction.dea_cust_id = dc.id;
             transaction.grand_total = Math.Round(decimal.Parse(txtGrandTotal.Text), 2);
             transaction.transaction_date = DateTime.Now;
-            transaction.vat = decimal.Parse(txtVAT.Text);
+            transaction.vat = decimal.TryParse(txtVAT.Text.Trim().Replace('.', ','), out decimal v) ? v : 0m;
             transaction.discount = decimal.Parse(txtDiscount.Text);
 
             // Get the username of logged in user
@@ -263,9 +263,23 @@ namespace Invoice_Master.UI
                     transactionDetail.added_date = DateTime.Now;
                     transactionDetail.added_by = u.id;
 
+                    // Increase or Decrease Product Quantity based on Purchase or Sale
+                    string transactionType = lblTop.Text;
+                    bool x = false;
+                    if (transactionType == "ACHATS")
+                    {
+                        // Increase the product Quantity
+                        x = pDAL.IncreaseProduct(transactionDetail.product_id, transactionDetail.qty);
+                    }
+                    else if (transactionType == "VENTES")
+                    {
+                        // Decrease the product Quantity
+                        x = pDAL.DecreaseProduct(transactionDetail.product_id, transactionDetail.qty);
+                    }
+
                     // Insert Transaction Detail into the database
                     bool y = tdDAL.InsertTransactionDetail(transactionDetail, out _);
-                    isSuccess = w && y;
+                    isSuccess = w && x && y;
                 }
 
                 // Complete transaction and clear form

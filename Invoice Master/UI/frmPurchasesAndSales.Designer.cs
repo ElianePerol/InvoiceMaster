@@ -151,10 +151,12 @@
             // 
             // txtContact
             // 
+            this.txtContact.BackColor = System.Drawing.SystemColors.ControlLight;
             this.txtContact.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtContact.Font = new System.Drawing.Font("Segoe UI Symbol", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtContact.Location = new System.Drawing.Point(410, 60);
             this.txtContact.Name = "txtContact";
+            this.txtContact.ReadOnly = true;
             this.txtContact.Size = new System.Drawing.Size(202, 25);
             this.txtContact.TabIndex = 1000013;
             // 
@@ -180,10 +182,12 @@
             // 
             // txtEmail
             // 
+            this.txtEmail.BackColor = System.Drawing.SystemColors.ControlLight;
             this.txtEmail.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtEmail.Font = new System.Drawing.Font("Segoe UI Symbol", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtEmail.Location = new System.Drawing.Point(410, 28);
             this.txtEmail.Name = "txtEmail";
+            this.txtEmail.ReadOnly = true;
             this.txtEmail.Size = new System.Drawing.Size(202, 25);
             this.txtEmail.TabIndex = 1000012;
             // 
@@ -199,11 +203,13 @@
             // 
             // txtAddress
             // 
+            this.txtAddress.BackColor = System.Drawing.SystemColors.ControlLight;
             this.txtAddress.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtAddress.Font = new System.Drawing.Font("Segoe UI Symbol", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtAddress.Location = new System.Drawing.Point(715, 28);
             this.txtAddress.Multiline = true;
             this.txtAddress.Name = "txtAddress";
+            this.txtAddress.ReadOnly = true;
             this.txtAddress.Size = new System.Drawing.Size(202, 57);
             this.txtAddress.TabIndex = 1000014;
             // 
@@ -219,10 +225,12 @@
             // 
             // txtDeaCustName
             // 
+            this.txtDeaCustName.BackColor = System.Drawing.SystemColors.ControlLight;
             this.txtDeaCustName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtDeaCustName.Font = new System.Drawing.Font("Segoe UI Symbol", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtDeaCustName.Location = new System.Drawing.Point(91, 59);
             this.txtDeaCustName.Name = "txtDeaCustName";
+            this.txtDeaCustName.ReadOnly = true;
             this.txtDeaCustName.Size = new System.Drawing.Size(202, 25);
             this.txtDeaCustName.TabIndex = 1000011;
             // 
@@ -388,10 +396,12 @@
             // 
             // txtProductName
             // 
+            this.txtProductName.BackColor = System.Drawing.SystemColors.ControlLight;
             this.txtProductName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtProductName.Font = new System.Drawing.Font("Segoe UI Symbol", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtProductName.Location = new System.Drawing.Point(326, 28);
             this.txtProductName.Name = "txtProductName";
+            this.txtProductName.ReadOnly = true;
             this.txtProductName.Size = new System.Drawing.Size(183, 25);
             this.txtProductName.TabIndex = 1000017;
             // 
@@ -427,19 +437,23 @@
             // 
             // txtInventory
             // 
+            this.txtInventory.BackColor = System.Drawing.SystemColors.ControlLight;
             this.txtInventory.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtInventory.Font = new System.Drawing.Font("Segoe UI Symbol", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtInventory.Location = new System.Drawing.Point(592, 28);
             this.txtInventory.Name = "txtInventory";
+            this.txtInventory.ReadOnly = true;
             this.txtInventory.Size = new System.Drawing.Size(183, 25);
             this.txtInventory.TabIndex = 1000018;
             // 
             // txtRate
             // 
+            this.txtRate.BackColor = System.Drawing.SystemColors.ControlLight;
             this.txtRate.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtRate.Font = new System.Drawing.Font("Segoe UI Symbol", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtRate.Location = new System.Drawing.Point(825, 28);
             this.txtRate.Name = "txtRate";
+            this.txtRate.ReadOnly = true;
             this.txtRate.Size = new System.Drawing.Size(79, 25);
             this.txtRate.TabIndex = 1000019;
             // 
