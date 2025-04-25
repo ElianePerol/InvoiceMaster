@@ -9,8 +9,8 @@ Il s’agit d’une application **Windows Forms** en **C# orienté objet**, dont
 - **Produits & Catégories**  
 - **Achats / Ventes**  
 - **Inventaire**  
-- **Transactions** et **impression de factures** (aperçu PDF via DGVPrinterHelper)
-
+- **Transactions**
+  
 ## Architecture
 
 L’application suit une architecture **3 tiers** :
@@ -38,7 +38,6 @@ L’application suit une architecture **3 tiers** :
 - **Achats & Ventes**  
   - Saisie multi-lignes de transaction  
   - Calcul automatique : sous-total, remise, TVA, total, reste à payer  
-  - Impression d’une facture (aperçu PDF)
 - **Inventaire**  
   - Filtrage dynamique par catégorie
 - **Base de données**  
@@ -51,7 +50,6 @@ L’application suit une architecture **3 tiers** :
 - **UI :** Windows Forms  
 - **Accès aux données :** ADO.NET / Microsoft.Data.SqlClient  
 - **Base de données :** SQL Server (Express / LocalDB)  
-- **Impression :** DGVPrinterHelper (aperçu et PDF)
 
 ## Prérequis
 
