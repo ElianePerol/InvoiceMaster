@@ -87,7 +87,7 @@ L’application suit une architecture **3 tiers** :
    ```
 
 5. Créer la base de données et les tables :
-     - Exécutez le script SQL fourni dans Database/schema.sql
+     - Exécutez le script SQL fourni dans Database/InvoiceMasterDBScript.sql
      - Celui-ci crée les tables (tbl_users, tbl_products, tbl_transactions, tbl_transaction_detail, …) et les contraintes.
 
 6. Compiler et lancer l’application (F5).
