@@ -34,6 +34,7 @@
             this.utilisateursToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.catégorieToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.produitsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.fournisseursEtClientsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.inventairesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.transactionsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.lblUser = new System.Windows.Forms.Label();
@@ -41,7 +42,6 @@
             this.lblAppFName = new System.Windows.Forms.Label();
             this.lblAppLName = new System.Windows.Forms.Label();
             this.lblSHead = new System.Windows.Forms.Label();
-            this.fournisseursEtClientsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pnlFooter.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -105,17 +105,26 @@
             this.produitsToolStripMenuItem.Text = "Produits";
             this.produitsToolStripMenuItem.Click += new System.EventHandler(this.produitsToolStripMenuItem_Click);
             // 
+            // fournisseursEtClientsToolStripMenuItem
+            // 
+            this.fournisseursEtClientsToolStripMenuItem.Name = "fournisseursEtClientsToolStripMenuItem";
+            this.fournisseursEtClientsToolStripMenuItem.Size = new System.Drawing.Size(137, 20);
+            this.fournisseursEtClientsToolStripMenuItem.Text = "Fournisseurs et Clients";
+            this.fournisseursEtClientsToolStripMenuItem.Click += new System.EventHandler(this.fournisseursEtClientsToolStripMenuItem_Click);
+            // 
             // inventairesToolStripMenuItem
             // 
             this.inventairesToolStripMenuItem.Name = "inventairesToolStripMenuItem";
             this.inventairesToolStripMenuItem.Size = new System.Drawing.Size(71, 20);
             this.inventairesToolStripMenuItem.Text = "Inventaire";
+            this.inventairesToolStripMenuItem.Click += new System.EventHandler(this.inventairesToolStripMenuItem_Click);
             // 
             // transactionsToolStripMenuItem
             // 
             this.transactionsToolStripMenuItem.Name = "transactionsToolStripMenuItem";
             this.transactionsToolStripMenuItem.Size = new System.Drawing.Size(85, 20);
             this.transactionsToolStripMenuItem.Text = "Transactions";
+            this.transactionsToolStripMenuItem.Click += new System.EventHandler(this.transactionsToolStripMenuItem_Click);
             // 
             // lblUser
             // 
@@ -173,13 +182,6 @@
             this.lblSHead.TabIndex = 6;
             this.lblSHead.Text = "Facturation et inventaire";
             this.lblSHead.Click += new System.EventHandler(this.lblSHead_Click);
-            // 
-            // fournisseursEtClientsToolStripMenuItem
-            // 
-            this.fournisseursEtClientsToolStripMenuItem.Name = "fournisseursEtClientsToolStripMenuItem";
-            this.fournisseursEtClientsToolStripMenuItem.Size = new System.Drawing.Size(137, 20);
-            this.fournisseursEtClientsToolStripMenuItem.Text = "Fournisseurs et Clients";
-            this.fournisseursEtClientsToolStripMenuItem.Click += new System.EventHandler(this.fournisseursEtClientsToolStripMenuItem_Click);
             // 
             // frmAdminDashboard
             // 

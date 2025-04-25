@@ -171,6 +171,7 @@
     <Compile Include="BLL\UserBLL.cs" />
     <Compile Include="DAL\CategoriesDAL.cs" />
     <Compile Include="DAL\DeaCustDAL.cs" />
+    <Compile Include="DAL\DGVPrinter.cs" />
     <Compile Include="DAL\LoginDAL.cs" />
     <Compile Include="DAL\ProductsDAL.cs" />
     <Compile Include="DAL\TransactionDAL.cs" />
@@ -206,6 +207,12 @@
     <Compile Include="UI\frmProducts.Designer.cs">
       <DependentUpon>frmProducts.cs</DependentUpon>
     </Compile>
+    <Compile Include="UI\frmTransactions.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\frmTransactions.Designer.cs">
+      <DependentUpon>frmTransactions.cs</DependentUpon>
+    </Compile>
     <Compile Include="UI\frmUsers.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -226,6 +233,12 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UI\frmInventory.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\frmInventory.Designer.cs">
+      <DependentUpon>frmInventory.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="UI\frmAdminDashboard.resx">
       <DependentUpon>frmAdminDashboard.cs</DependentUpon>
     </EmbeddedResource>
@@ -244,6 +257,9 @@
     <EmbeddedResource Include="UI\frmPurchasesAndSales.resx">
       <DependentUpon>frmPurchasesAndSales.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="UI\frmTransactions.resx">
+      <DependentUpon>frmTransactions.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UI\frmUserDashboard.resx">
       <DependentUpon>frmUserDashboard.cs</DependentUpon>
     </EmbeddedResource>
@@ -258,6 +274,9 @@
     </Compile>
     <EmbeddedResource Include="UI\frmUsers.resx">
       <DependentUpon>frmUsers.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\frmInventory.resx">
+      <DependentUpon>frmInventory.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">

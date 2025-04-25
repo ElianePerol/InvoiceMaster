@@ -549,5 +549,50 @@ namespace Invoice_Master.DAL
             return isSuccess;
         }
         #endregion
+
+        #region Display Products based on Category
+        public DataTable DisplayProductByCategory(string category)
+        {
+            // Connection to the database
+            SqlConnection conn = new SqlConnection(myconnstrng);
+
+            // DataTable to hold the data
+            DataTable dt = new DataTable();
+
+            try
+            {
+                // SQL query to select all data from the tbl_products table
+                string sql = "SELECT * FROM tbl_products WHERE category=@c";
+
+                // SqlCommand to execute the SQL query
+                SqlCommand cmd = new SqlCommand(sql, conn);
+
+                // Add parameters to the SqlCommand
+                cmd.Parameters.AddWithValue("@c", category);
+
+                // SqlDataAdapter to fill the DataTable with the data
+                SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+
+                // Open the connection to the database
+                conn.Open();
+
+                // Fill the DataTable with the data from the database
+                adapter.Fill(dt);
+            }
+            catch (Exception ex)
+            {
+                // Show an error message if there is an exception
+                MessageBox.Show(ex.Message);
+            }
+            finally
+            {
+                // Close the connection to the database
+                conn.Close();
+            }
+            // Return the DataTable with the data
+            return dt;
+
+        }
+        #endregion
     }
 }

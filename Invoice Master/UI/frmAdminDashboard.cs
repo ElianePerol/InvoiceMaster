@@ -83,8 +83,20 @@ namespace Invoice_Master
 
         private void fournisseursEtClientsToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            frmDeaCust product = new frmDeaCust();
-            product.Show();
+            frmDeaCust deaCust = new frmDeaCust();
+            deaCust.Show();
+        }
+
+        private void transactionsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmTransactions transaction = new frmTransactions();
+            transaction.Show();
+        }
+
+        private void inventairesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmInventory inventory = new frmInventory();
+            inventory.Show();
         }
     }
 }

@@ -7,6 +7,7 @@ using Microsoft.Data.SqlClient;
 using System.Configuration;
 using Invoice_Master.BLL;
 using System.Windows.Forms;
+using System.Data;
 
 namespace Invoice_Master.DAL
 {
@@ -71,6 +72,91 @@ namespace Invoice_Master.DAL
             }
 
             return isSuccess;
+        }
+        #endregion
+
+        #region Display all the Transaction
+        public DataTable DisplayAllTransactions()
+        {
+            // Connection to the database
+            SqlConnection conn = new SqlConnection(myconnstrng);
+
+            // DataTable to hold the data
+            DataTable dt = new DataTable();
+
+            try
+            {
+                // SQL query to select all data from the tbl_products table
+                string sql = "SELECT * FROM tbl_transactions";
+
+                // SqlCommand to execute the SQL query
+                SqlCommand cmd = new SqlCommand(sql, conn);
+
+                // SqlDataAdapter to fill the DataTable with the data
+                SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+
+                // Open the connection to the database
+                conn.Open();
+
+                // Fill the DataTable with the data from the database
+                adapter.Fill(dt);
+            }
+            catch (Exception ex)
+            {
+                // Show an error message if there is an exception
+                MessageBox.Show(ex.Message);
+            }
+            finally
+            {
+                // Close the connection to the database
+                conn.Close();
+            }
+            // Return the DataTable with the data
+            return dt;
+        }
+        #endregion
+
+        #region Display Transaction by Type
+        public DataTable DisplayTransactionByType(string type)
+        {
+            // Connection to the database
+            SqlConnection conn = new SqlConnection(myconnstrng);
+
+            // DataTable to hold the data
+            DataTable dt = new DataTable();
+
+            try
+            {
+                // SQL query to select all data from the tbl_products table
+                string sql = "SELECT * FROM tbl_transactions WHERE type=@t";
+
+                // SqlCommand to execute the SQL query
+                SqlCommand cmd = new SqlCommand(sql, conn);
+
+                // Add parameters to the SqlCommand
+                cmd.Parameters.AddWithValue("@t", type);
+
+                // SqlDataAdapter to fill the DataTable with the data
+                SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+
+                // Open the connection to the database
+                conn.Open();
+
+                // Fill the DataTable with the data from the database
+                adapter.Fill(dt);
+            }
+            catch (Exception ex)
+            {
+                // Show an error message if there is an exception
+                MessageBox.Show(ex.Message);
+            }
+            finally
+            {
+                // Close the connection to the database
+                conn.Close();
+            }
+            // Return the DataTable with the data
+            return dt;
         }
         #endregion
     }

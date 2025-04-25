@@ -119,6 +119,7 @@
             this.dgvDeaCust.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvDeaCust.Location = new System.Drawing.Point(430, 105);
             this.dgvDeaCust.Name = "dgvDeaCust";
+            this.dgvDeaCust.ReadOnly = true;
             this.dgvDeaCust.Size = new System.Drawing.Size(711, 556);
             this.dgvDeaCust.TabIndex = 1000070;
             this.dgvDeaCust.RowHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvDeaCust_RowHeaderMouseClick);

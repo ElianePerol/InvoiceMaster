@@ -63,5 +63,11 @@ namespace Invoice_Master
         {
 
         }
+
+        private void inventairesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmInventory inventory = new frmInventory();
+            inventory.Show();
+        }
     }
 }

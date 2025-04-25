@@ -146,6 +146,7 @@
             this.dgvCategories.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvCategories.Location = new System.Drawing.Point(431, 105);
             this.dgvCategories.Name = "dgvCategories";
+            this.dgvCategories.ReadOnly = true;
             this.dgvCategories.Size = new System.Drawing.Size(711, 556);
             this.dgvCategories.TabIndex = 1000009;
             this.dgvCategories.RowHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvCategories_RowHeaderMouseClick);

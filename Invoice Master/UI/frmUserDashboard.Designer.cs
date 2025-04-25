@@ -29,6 +29,9 @@
         private void InitializeComponent()
         {
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.achatsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.ventesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.inventairesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.fournisseursEtClientsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.lblLoggedInUser = new System.Windows.Forms.Label();
             this.lblUser = new System.Windows.Forms.Label();
@@ -37,9 +40,6 @@
             this.lblAppFName = new System.Windows.Forms.Label();
             this.pnlFooter = new System.Windows.Forms.Panel();
             this.lblFooter = new System.Windows.Forms.Label();
-            this.achatsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.ventesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.inventairesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.pnlFooter.SuspendLayout();
             this.SuspendLayout();
@@ -56,6 +56,27 @@
             this.menuStrip1.Size = new System.Drawing.Size(1485, 24);
             this.menuStrip1.TabIndex = 2;
             this.menuStrip1.Text = "menuStripTop";
+            // 
+            // achatsToolStripMenuItem
+            // 
+            this.achatsToolStripMenuItem.Name = "achatsToolStripMenuItem";
+            this.achatsToolStripMenuItem.Size = new System.Drawing.Size(55, 20);
+            this.achatsToolStripMenuItem.Text = "Achats";
+            this.achatsToolStripMenuItem.Click += new System.EventHandler(this.achatsToolStripMenuItem_Click);
+            // 
+            // ventesToolStripMenuItem
+            // 
+            this.ventesToolStripMenuItem.Name = "ventesToolStripMenuItem";
+            this.ventesToolStripMenuItem.Size = new System.Drawing.Size(53, 20);
+            this.ventesToolStripMenuItem.Text = "Ventes";
+            this.ventesToolStripMenuItem.Click += new System.EventHandler(this.ventesToolStripMenuItem_Click);
+            // 
+            // inventairesToolStripMenuItem
+            // 
+            this.inventairesToolStripMenuItem.Name = "inventairesToolStripMenuItem";
+            this.inventairesToolStripMenuItem.Size = new System.Drawing.Size(71, 20);
+            this.inventairesToolStripMenuItem.Text = "Inventaire";
+            this.inventairesToolStripMenuItem.Click += new System.EventHandler(this.inventairesToolStripMenuItem_Click);
             // 
             // fournisseursEtClientsToolStripMenuItem
             // 
@@ -137,26 +158,6 @@
             this.lblFooter.Size = new System.Drawing.Size(161, 17);
             this.lblFooter.TabIndex = 0;
             this.lblFooter.Text = "Développé par Eliane Perol";
-            // 
-            // achatsToolStripMenuItem
-            // 
-            this.achatsToolStripMenuItem.Name = "achatsToolStripMenuItem";
-            this.achatsToolStripMenuItem.Size = new System.Drawing.Size(55, 20);
-            this.achatsToolStripMenuItem.Text = "Achats";
-            this.achatsToolStripMenuItem.Click += new System.EventHandler(this.achatsToolStripMenuItem_Click);
-            // 
-            // ventesToolStripMenuItem
-            // 
-            this.ventesToolStripMenuItem.Name = "ventesToolStripMenuItem";
-            this.ventesToolStripMenuItem.Size = new System.Drawing.Size(53, 20);
-            this.ventesToolStripMenuItem.Text = "Ventes";
-            this.ventesToolStripMenuItem.Click += new System.EventHandler(this.ventesToolStripMenuItem_Click);
-            // 
-            // inventairesToolStripMenuItem
-            // 
-            this.inventairesToolStripMenuItem.Name = "inventairesToolStripMenuItem";
-            this.inventairesToolStripMenuItem.Size = new System.Drawing.Size(76, 20);
-            this.inventairesToolStripMenuItem.Text = "Inventaires";
             // 
             // frmUserDashboard
             // 

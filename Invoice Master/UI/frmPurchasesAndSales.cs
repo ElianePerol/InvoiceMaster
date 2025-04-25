@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Transactions;
 using System.Windows.Forms;
 using System.Xml.Linq;
+using DGVPrinterHelper;
 using Invoice_Master.BLL;
 using Invoice_Master.DAL;
 
@@ -51,7 +52,7 @@ namespace Invoice_Master.UI
             transactionDT.Columns.Add("Nom du produit");
             transactionDT.Columns.Add("Prix");
             transactionDT.Columns.Add("Quantité");
-            transactionDT.Columns.Add("Nom du total");
+            transactionDT.Columns.Add("Total");
 
         }
 
@@ -287,6 +288,24 @@ namespace Invoice_Master.UI
                 {
                     // Transaction complete
                     scope.Complete();
+
+                    // Print the invoice
+                    DGVPrinter printer = new DGVPrinter();
+
+                    printer.Title = "\r\nINVOICE MASTER";
+                    printer.PageNumbers = true;
+                    printer.PageNumberInHeader = false;
+                    printer.PorportionalColumns = true;
+                    printer.TitleSpacing = 20;
+                    printer.HeaderCellAlignment = StringAlignment.Near;
+                    printer.Footer = "Remise : " + txtDiscount.Text + "%\r\n" +
+                                     "TVA : " + txtVAT.Text + "%\r\n" +
+                                     "Total : " + txtGrandTotal.Text + "\r\n" +
+                                     "Merci pour votre achat !";
+                    printer.FooterSpacing = 15;
+                    printer.PrintPreviewDataGridView(dgvAddedProducts);
+
+
                     MessageBox.Show("Transaction réalisée avec succès !");
 
                     // Clear the Added Products Data Grid View
