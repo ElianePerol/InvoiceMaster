@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.pnlFooter = new System.Windows.Forms.Panel();
-            this.lblFooter = new System.Windows.Forms.Label();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.utilisateursToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.catégorieToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -42,6 +41,8 @@
             this.lblAppFName = new System.Windows.Forms.Label();
             this.lblAppLName = new System.Windows.Forms.Label();
             this.lblSHead = new System.Windows.Forms.Label();
+            this.linkLblSupport = new System.Windows.Forms.LinkLabel();
+            this.lblFooter = new System.Windows.Forms.Label();
             this.pnlFooter.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -49,6 +50,7 @@
             // pnlFooter
             // 
             this.pnlFooter.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(85)))), ((int)(((byte)(78)))));
+            this.pnlFooter.Controls.Add(this.linkLblSupport);
             this.pnlFooter.Controls.Add(this.lblFooter);
             this.pnlFooter.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.pnlFooter.Location = new System.Drawing.Point(0, 568);
@@ -56,18 +58,6 @@
             this.pnlFooter.Size = new System.Drawing.Size(1476, 39);
             this.pnlFooter.TabIndex = 0;
             this.pnlFooter.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
-            // 
-            // lblFooter
-            // 
-            this.lblFooter.AutoSize = true;
-            this.lblFooter.Font = new System.Drawing.Font("Segoe UI Variable Display", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblFooter.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.lblFooter.Location = new System.Drawing.Point(858, 13);
-            this.lblFooter.Name = "lblFooter";
-            this.lblFooter.Size = new System.Drawing.Size(161, 17);
-            this.lblFooter.TabIndex = 0;
-            this.lblFooter.Text = "Développé par Eliane Perol";
-            this.lblFooter.Click += new System.EventHandler(this.label1_Click);
             // 
             // menuStrip1
             // 
@@ -183,6 +173,31 @@
             this.lblSHead.Text = "Facturation et inventaire";
             this.lblSHead.Click += new System.EventHandler(this.lblSHead_Click);
             // 
+            // linkLblSupport
+            // 
+            this.linkLblSupport.AutoSize = true;
+            this.linkLblSupport.Font = new System.Drawing.Font("Segoe UI Variable Display", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.linkLblSupport.LinkArea = new System.Windows.Forms.LinkArea(0, 20);
+            this.linkLblSupport.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.linkLblSupport.Location = new System.Drawing.Point(977, 13);
+            this.linkLblSupport.Name = "linkLblSupport";
+            this.linkLblSupport.Size = new System.Drawing.Size(130, 17);
+            this.linkLblSupport.TabIndex = 3;
+            this.linkLblSupport.TabStop = true;
+            this.linkLblSupport.Text = "Contacter le support";
+            this.linkLblSupport.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLblSupport_LinkClicked);
+            // 
+            // lblFooter
+            // 
+            this.lblFooter.AutoSize = true;
+            this.lblFooter.Font = new System.Drawing.Font("Segoe UI Variable Display", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblFooter.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.lblFooter.Location = new System.Drawing.Point(775, 13);
+            this.lblFooter.Name = "lblFooter";
+            this.lblFooter.Size = new System.Drawing.Size(207, 17);
+            this.lblFooter.TabIndex = 2;
+            this.lblFooter.Text = "Projet pédagogique | Eliane Perol | ";
+            // 
             // frmAdminDashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -215,7 +230,6 @@
         #endregion
 
         private System.Windows.Forms.Panel pnlFooter;
-        private System.Windows.Forms.Label lblFooter;
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem utilisateursToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem catégorieToolStripMenuItem;
@@ -228,6 +242,8 @@
         private System.Windows.Forms.Label lblAppLName;
         private System.Windows.Forms.Label lblSHead;
         private System.Windows.Forms.ToolStripMenuItem fournisseursEtClientsToolStripMenuItem;
+        private System.Windows.Forms.LinkLabel linkLblSupport;
+        private System.Windows.Forms.Label lblFooter;
     }
 }
 

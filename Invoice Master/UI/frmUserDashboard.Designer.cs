@@ -40,6 +40,7 @@
             this.lblAppFName = new System.Windows.Forms.Label();
             this.pnlFooter = new System.Windows.Forms.Panel();
             this.lblFooter = new System.Windows.Forms.Label();
+            this.linkLblSupport = new System.Windows.Forms.LinkLabel();
             this.menuStrip1.SuspendLayout();
             this.pnlFooter.SuspendLayout();
             this.SuspendLayout();
@@ -53,7 +54,7 @@
             this.fournisseursEtClientsToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1485, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(1476, 24);
             this.menuStrip1.TabIndex = 2;
             this.menuStrip1.Text = "menuStripTop";
             // 
@@ -110,7 +111,7 @@
             this.lblSHead.AutoSize = true;
             this.lblSHead.Font = new System.Drawing.Font("Segoe UI Variable Display Semib", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblSHead.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(199)))), ((int)(((byte)(76)))), ((int)(((byte)(57)))));
-            this.lblSHead.Location = new System.Drawing.Point(824, 567);
+            this.lblSHead.Location = new System.Drawing.Point(823, 501);
             this.lblSHead.Name = "lblSHead";
             this.lblSHead.Size = new System.Drawing.Size(220, 26);
             this.lblSHead.TabIndex = 10;
@@ -121,7 +122,7 @@
             this.lblAppLName.AutoSize = true;
             this.lblAppLName.Font = new System.Drawing.Font("Segoe UI Variable Display", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblAppLName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(85)))), ((int)(((byte)(78)))));
-            this.lblAppLName.Location = new System.Drawing.Point(936, 531);
+            this.lblAppLName.Location = new System.Drawing.Point(935, 465);
             this.lblAppLName.Name = "lblAppLName";
             this.lblAppLName.Size = new System.Drawing.Size(124, 36);
             this.lblAppLName.TabIndex = 9;
@@ -132,7 +133,7 @@
             this.lblAppFName.AutoSize = true;
             this.lblAppFName.Font = new System.Drawing.Font("Segoe UI Variable Text Semibold", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblAppFName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(85)))), ((int)(((byte)(78)))));
-            this.lblAppFName.Location = new System.Drawing.Point(811, 531);
+            this.lblAppFName.Location = new System.Drawing.Point(810, 465);
             this.lblAppFName.Name = "lblAppFName";
             this.lblAppFName.Size = new System.Drawing.Size(119, 36);
             this.lblAppFName.TabIndex = 8;
@@ -141,11 +142,12 @@
             // pnlFooter
             // 
             this.pnlFooter.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(85)))), ((int)(((byte)(78)))));
+            this.pnlFooter.Controls.Add(this.linkLblSupport);
             this.pnlFooter.Controls.Add(this.lblFooter);
             this.pnlFooter.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.pnlFooter.Location = new System.Drawing.Point(0, 637);
+            this.pnlFooter.Location = new System.Drawing.Point(0, 568);
             this.pnlFooter.Name = "pnlFooter";
-            this.pnlFooter.Size = new System.Drawing.Size(1485, 39);
+            this.pnlFooter.Size = new System.Drawing.Size(1476, 39);
             this.pnlFooter.TabIndex = 7;
             // 
             // lblFooter
@@ -153,18 +155,31 @@
             this.lblFooter.AutoSize = true;
             this.lblFooter.Font = new System.Drawing.Font("Segoe UI Variable Display", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblFooter.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.lblFooter.Location = new System.Drawing.Point(858, 13);
+            this.lblFooter.Location = new System.Drawing.Point(775, 13);
             this.lblFooter.Name = "lblFooter";
-            this.lblFooter.Size = new System.Drawing.Size(161, 17);
+            this.lblFooter.Size = new System.Drawing.Size(207, 17);
             this.lblFooter.TabIndex = 0;
-            this.lblFooter.Text = "Développé par Eliane Perol";
+            this.lblFooter.Text = "Projet pédagogique | Eliane Perol | ";
+            // 
+            // linkLblSupport
+            // 
+            this.linkLblSupport.AutoSize = true;
+            this.linkLblSupport.Font = new System.Drawing.Font("Segoe UI Variable Display", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.linkLblSupport.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.linkLblSupport.Location = new System.Drawing.Point(977, 13);
+            this.linkLblSupport.Name = "linkLblSupport";
+            this.linkLblSupport.Size = new System.Drawing.Size(130, 17);
+            this.linkLblSupport.TabIndex = 1;
+            this.linkLblSupport.TabStop = true;
+            this.linkLblSupport.Text = "Contacter le support";
+            this.linkLblSupport.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLblSupport_LinkClicked);
             // 
             // frmUserDashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Beige;
-            this.ClientSize = new System.Drawing.Size(1485, 676);
+            this.ClientSize = new System.Drawing.Size(1476, 607);
             this.Controls.Add(this.lblSHead);
             this.Controls.Add(this.lblAppLName);
             this.Controls.Add(this.lblAppFName);
@@ -201,5 +216,6 @@
         private System.Windows.Forms.ToolStripMenuItem achatsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem ventesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem inventairesToolStripMenuItem;
+        private System.Windows.Forms.LinkLabel linkLblSupport;
     }
 }

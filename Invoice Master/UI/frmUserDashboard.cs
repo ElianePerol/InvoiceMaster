@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -68,6 +69,18 @@ namespace Invoice_Master
         {
             frmInventory inventory = new frmInventory();
             inventory.Show();
+        }
+
+        private void linkLblSupport_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            // Sets the link label to open the default email client with a new message
+            var psi = new ProcessStartInfo
+            {
+                FileName = "mailto:eliane.perol@gmail.com?subject=Support%20Invoice%20Master",
+                UseShellExecute = true // Execute the file using the shell
+            };
+
+            Process.Start(psi); // Start the process
         }
     }
 }
