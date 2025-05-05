@@ -287,6 +287,34 @@ namespace Invoice_Master.UI
                 {
                     // Transaction complete
                     scope.Complete();
+
+                    MessageBox.Show("Transaction réalisée avec succès !");
+
+                    // Clear the Added Products Data Grid View
+                    dgvAddedProducts.DataSource = null;
+                    dgvAddedProducts.Rows.Clear();
+
+                    // Clear the Dealer and Customer text boxes
+                    txtDeaCustName.Text = "";
+                    txtEmail.Text = "";
+                    txtContact.Text = "";
+                    txtAddress.Text = "";
+
+                    // Clear the Products text boxes
+                    txtProductSearch.Text = "";
+                    txtProductName.Text = "";
+                    txtInventory.Text = "0";
+                    txtRate.Text = "0";
+                    txtQty.Text = "0";
+
+                    // Clear the Calculation Details text boxes
+                    txtSubTotal.Text = "0";
+                    txtDiscount.Text = "0";
+                    txtVAT.Text = "0";
+                    txtGrandTotal.Text = "0";
+                    txtPaidAmount.Text = "0";
+                    txtReturnAmount.Text = "0";
+
                 }
                 else
                 {
