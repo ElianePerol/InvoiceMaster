@@ -1,2 +1,4 @@
 # Visual Studio workspace files
 .vs/
+
+/DAL/DVGPrinter.cs
