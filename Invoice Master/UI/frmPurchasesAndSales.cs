@@ -288,50 +288,6 @@ namespace Invoice_Master.UI
                 {
                     // Transaction complete
                     scope.Complete();
-
-                    // Print the invoice
-                    DGVPrinter printer = new DGVPrinter();
-
-                    printer.Title = "\r\nINVOICE MASTER\r\n";
-                    printer.PageNumbers = true;
-                    printer.PageNumberInHeader = false;
-                    printer.PorportionalColumns = true;
-                    printer.TitleSpacing = 20;
-                    printer.HeaderCellAlignment = StringAlignment.Near;
-                    printer.Footer = "Remise : " + txtDiscount.Text + "%\r\n" +
-                                     "TVA : " + txtVAT.Text + "%\r\n" +
-                                     "Total : " + txtGrandTotal.Text + "\r\n" +
-                                     "Merci pour votre achat !";
-                    printer.FooterSpacing = 15;
-                    printer.PrintPreviewDataGridView(dgvAddedProducts);
-
-
-                    MessageBox.Show("Transaction réalisée avec succès !");
-
-                    // Clear the Added Products Data Grid View
-                    dgvAddedProducts.DataSource = null;
-                    dgvAddedProducts.Rows.Clear();
-
-                    // Clear the Dealer and Customer text boxes
-                    txtDeaCustName.Text = "";
-                    txtEmail.Text = "";
-                    txtContact.Text = "";
-                    txtAddress.Text = "";
-
-                    // Clear the Products text boxes
-                    txtProductSearch.Text = "";
-                    txtProductName.Text = "";
-                    txtInventory.Text = "0";
-                    txtRate.Text = "0";
-                    txtQty.Text = "0";
-
-                    // Clear the Calculation Details text boxes
-                    txtSubTotal.Text = "0";
-                    txtDiscount.Text = "0";
-                    txtVAT.Text = "0";
-                    txtGrandTotal.Text = "0";
-                    txtPaidAmount.Text = "0";
-                    txtReturnAmount.Text = "0";
                 }
                 else
                 {
